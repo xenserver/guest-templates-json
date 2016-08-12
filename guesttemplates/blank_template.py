@@ -1,13 +1,14 @@
-import constants
 import datetime
-import json
 import re
 import uuid
 from xml.dom import minidom
 
 
 def amount_to_int(amt):
-    scale = { 'T': 40, 't': 40, 'G': 30, 'g': 30, 'M': 20, 'm': 20, 'K': 10, 'k': 10 }
+    scale = {'T': 40, 't': 40,
+             'G': 30, 'g': 30,
+             'M': 20, 'm': 20,
+             'K': 10, 'k': 10}
 
     m = re.match(r'(\d+)([TtGgMmKk])?$', amt)
     if not m:
@@ -23,9 +24,17 @@ def get_bool_key(d, key, default):
         v = v.lower() in ('t', 'true', 'y', 'yes', '1')
     return v
 
+class Actions(object):
+    destroy = "destroy"
+    restart = "restart"
+
+class PowerStates(object):
+    Running = "Running"
+    Halted = "Halted"
+
 class Platform(object):
 
-    def __init__(self, data, defaults = False):
+    def __init__(self, data, defaults=False):
         if defaults or 'nx' in data:
             self.nx = 'true' if get_bool_key(data, 'nx', True) else 'false'
         if defaults or 'acpi' in data:
@@ -45,7 +54,7 @@ class Platform(object):
         if 'device_id' in data:
             self.device_id = data['device_id']
 
-    def getPlatform(self):
+    def get_platform(self):
         return self.__dict__
 
     def update(self, new):
@@ -56,12 +65,12 @@ class OtherConfig(object):
     def __init__(self, data):
         self.mac_seed = data.get('mac_seed', str(uuid.uuid4()))
         if 'disks' in data:
-            self.disks = DiskDevices(data['disks']).toXML()
+            self.disks = DiskDevices(data['disks']).toxml()
         if 'other_config' in data:
             self.__dict__.update(data['other_config'])
         self.default_template = 'false' # cannot import with this set to 'true'
 
-    def getOtherConfig(self):
+    def get_other_config(self):
         return self.__dict__
 
     def update(self, new):
@@ -77,14 +86,14 @@ class DiskDevices(object):
                                    disk.get('bootable', True),
                                    disk.get('type', 'system')))
 
-    def toXML(self):
+    def toxml(self):
         doc = minidom.Document()
         root = doc.createElement('provision')
         doc.appendChild(root)
 
         position = 0
         for disk in self.disks:
-            entry = disk.getDiskEntry()
+            entry = disk.get_disk_entry()
             entry.setAttribute('device', str(position))
             root.appendChild(entry)
             position += 1
@@ -99,7 +108,7 @@ class Disk(object):
         self.bootable = 'true' if bootable else 'false'
         self.type = disk_type
 
-    def getDiskEntry(self):
+    def get_disk_entry(self):
         doc = minidom.Document()
         entry = doc.createElement('disk')
         for element_name, element_value in self.__dict__.items():
@@ -111,7 +120,7 @@ class Disk(object):
 # Template restrictions (added to recommendations field for clients, especially UI clients)
 class Recommendations(object):
 
-    def __init__(self, data, defaults = False):
+    def __init__(self, data, defaults=False):
 
         if 'max_memory' in data:
             self.memory_static_max = str(amount_to_int(data['max_memory']))
@@ -128,8 +137,7 @@ class Recommendations(object):
         if 'allow_vgpu' in data:
             self.allow_vgpu = '1' if get_bool_key(data, 'allow_vgpu', False) else '0'
 
-    def toXML(self):
-
+    def toxml(self):
         doc = minidom.Document()
         root = doc.createElement('restrictions')
         doc.appendChild(root)
@@ -164,7 +172,7 @@ class BlankTemplate(object):
     def __init__(self):
         self.allowed_operations = []
         self.current_operations = {}
-        self.power_state = constants.PowerStates.Halted
+        self.power_state = PowerStates.Halted
         self.user_version = 1
         self.is_a_template = True
         self.suspend_VDI = "OpaqueRef:NULL"
@@ -173,9 +181,9 @@ class BlankTemplate(object):
         self.VCPUs_params = {}
         self.VCPUs_max = 1
         self.VCPUs_at_startup = 1
-        self.actions_after_shutdown = constants.Actions.destroy
-        self.actions_after_reboot = constants.Actions.restart
-        self.actions_after_crash = constants.Actions.restart
+        self.actions_after_shutdown = Actions.destroy
+        self.actions_after_reboot = Actions.restart
+        self.actions_after_crash = Actions.restart
         self.consoles = []
         self.VIFs = []
         self.VBDs = []
@@ -219,7 +227,8 @@ class BlankTemplate(object):
         self.hardware_platform_version = 0
         self.has_vendor_device = False
 
-    def createMember(self, doc, father, member_name):
+    @staticmethod
+    def create_member(doc, father, member_name):
         entry = doc.createElement('member')
         father.appendChild(entry)
         name = doc.createElement('name')
@@ -230,12 +239,11 @@ class BlankTemplate(object):
 
         return value
 
-    def toXML(self, version):
-
+    def toxml(self, version):
         record_dict = dict(self.__dict__)
-        record_dict['platform'] = self.platform.getPlatform()
-        record_dict['other_config'] = self.other_config.getOtherConfig()
-        record_dict['recommendations'] = self.recommendations.toXML()
+        record_dict['platform'] = self.platform.get_platform()
+        record_dict['other_config'] = self.other_config.get_other_config()
+        record_dict['recommendations'] = self.recommendations.toxml()
 
         doc = minidom.Document()
         root = doc.createElement('value')
@@ -244,15 +252,15 @@ class BlankTemplate(object):
         main_struct = doc.createElement('struct')
         root.appendChild(main_struct)
 
-        ver_member = self.createMember(doc, main_struct, 'version')
+        ver_member = self.create_member(doc, main_struct, 'version')
         struct = doc.createElement('struct')
         ver_member.appendChild(struct)
 
         for n, v in version.items():
-            value = self.createMember(doc, struct, n)
+            value = self.create_member(doc, struct, n)
             value.appendChild(doc.createTextNode(v))
 
-        obj_member = self.createMember(doc, main_struct, 'objects')
+        obj_member = self.create_member(doc, main_struct, 'objects')
         obj_array = doc.createElement('array')
         obj_member.appendChild(obj_array)
         obj_data = doc.createElement('data')
@@ -263,15 +271,15 @@ class BlankTemplate(object):
         obj_value.appendChild(struct)
 
         for n, v in (('class', 'VM'), ('id', 'Ref:0')):
-            value = self.createMember(doc, struct, n)
+            value = self.create_member(doc, struct, n)
             value.appendChild(doc.createTextNode(v))
 
-        snapshot = self.createMember(doc, struct, 'snapshot')
+        snapshot = self.create_member(doc, struct, 'snapshot')
         struct2 = doc.createElement('struct')
         snapshot.appendChild(struct2)
 
         for n2, v2 in record_dict.items():
-            value = self.createMember(doc, struct2, n2)
+            value = self.create_member(doc, struct2, n2)
 
             if isinstance(v2, basestring) and v2 != "":
                 value.appendChild(doc.createTextNode(v2))
@@ -296,21 +304,21 @@ class BlankTemplate(object):
                 value.appendChild(struct3)
                 data = doc.createElement('data')
                 struct3.appendChild(data)
-                for n3,v3 in v2:
-                    value = self.createMember(doc, data, n3)
+                for n3, v3 in v2:
+                    value = self.create_member(doc, data, n3)
                     value.appendChild(doc.createTextNode(v3))
 
             elif isinstance(v2, dict):
                 struct3 = doc.createElement('struct')
                 value.appendChild(struct3)
-                for n3,v3 in v2.items():
-                    value = self.createMember(doc, struct3, n3)
+                for n3, v3 in v2.items():
+                    value = self.create_member(doc, struct3, n3)
                     value.appendChild(doc.createTextNode(v3))
 
             elif isinstance(v2, int):
                 value.appendChild(doc.createTextNode(str(v2)))
 
-        return doc.toprettyxml(indent = '   ')
+        return doc.toprettyxml(indent='   ')
 
     def update(self, template):
         self.__dict__.update(template)
@@ -324,7 +332,7 @@ class BaseTemplate(BlankTemplate):
         self.recommendations = Recommendations(template)
         self.update(template, True)
 
-    def update(self, template, defaults = False):
+    def update(self, template, defaults=False):
 
         if defaults or 'HVM_boot_params' in template:
             self.HVM_boot_params = template.get('HVM_boot_params', {})
@@ -333,10 +341,10 @@ class BaseTemplate(BlankTemplate):
             if defaults or k in template:
                 self.__dict__[k] = template.get(k, '')
 
-        blacklist = ( 'platform', 'other_config', 'recommendations', 'disks' )
+        blacklist = ('platform', 'other_config', 'recommendations', 'disks')
 
         # apply template values over current values
-        filtered_template = { k: v for k, v in template.iteritems() if k not in blacklist }
+        filtered_template = {k: v for k, v in template.iteritems() if k not in blacklist}
         super(BaseTemplate, self).update(filtered_template)
 
         if "min_memory" in template:
@@ -351,19 +359,3 @@ class BaseTemplate(BlankTemplate):
         self.platform.update(Platform(template, defaults))
         self.other_config.update(OtherConfig(template))
         self.recommendations.update(Recommendations(template, defaults))
-
-def load_template(fname):
-    """ Read JSON template and create a template object. If one template derives
-    from another load that and apply changes upon that. """
-
-    with open(fname) as templatefile:
-        template = json.load(templatefile)
-
-    if 'derived_from' in template:
-        # load base template and overlay deltas
-        ret = load_template(template['derived_from'])
-        ret.update(template)
-    else:
-        ret = BaseTemplate(template)
-
-    return ret

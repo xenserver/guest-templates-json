@@ -1,0 +1,52 @@
+#!/bin/bash
+
+set -e
+XE=/usr/bin/xe
+
+# Return zero if this host is a master and non-zero otherwise.
+this_host_is_master(){
+    # Note that this is (a) firstboot (after install, upgrade or eject) and (b) UPGRADE is set.
+    # Therefore HA isn't running and it's safe to peek at the pool.conf. The reason we don't use the
+    # the CLI is because, if we're a slave, we want to detect this without blocking and return from
+    # this script.
+    pool_role=$(cat < /etc/xensource/pool.conf)
+    [ "${pool_role}" = "master" ]
+    return $?
+}
+
+# Remove all default_templates if we have upgraded from a platform version < 2.1.1
+remove_built_in_templates() {
+    source /etc/xensource-inventory
+    source /var/tmp/.previousInventory 2> /dev/null ||:
+    major=$(echo "$PLATFORM_VERSION" | sed 's/^\([0-9]*\).*/\1/')
+    minor=$(echo "$PLATFORM_VERSION" | sed 's/^[0-9]*\.\([0-9]*\).*/\1/')
+    sub=$(echo "$PLATFORM_VERSION" | sed 's/^[0-9]*\.[0-9]*\.\([0-9]*\).*/\1/')
+    if [ "$major" -lt 2 -o \
+         \( "$major" -eq 2 -a "$minor" -lt 1 \) -o \
+         \( "$major" -eq 2 -a "$minor" -eq 1 -a "$sub" -lt 1 \) ]; then
+        echo "Removing all default templates"
+        IFS=","; for uuid in $($XE template-list other-config:default_template=true --minimal); do
+	    echo "Removing old template: $($XE template-list uuid=$uuid params=name-label --minimal)"
+	    $XE vm-param-set uuid=$uuid is-a-template=false other-config:default_template=false
+	    $XE vm-destroy uuid=$uuid
+        done
+    fi
+}
+
+start() {
+    XAPI_START_TIMEOUT_SECONDS=240
+
+    if this_host_is_master; then
+	if /opt/xensource/bin/xapi-wait-init-complete ${XAPI_START_TIMEOUT_SECONDS}; then
+	    remove_built_in_templates
+	    create-guest-templates
+	    return 0
+	else
+	    return 1
+	fi
+    fi
+}
+
+case $1 in
+    start)  start ;;
+esac

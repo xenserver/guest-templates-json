@@ -1,0 +1,6 @@
+{
+    "uuid": "97840fa4-8526-72ef-916b-2ef014efa5e0",
+    "reference_label": "centos7",
+    "name_label": "CentOS 7",
+    "derived_from": "el7.json"
+}

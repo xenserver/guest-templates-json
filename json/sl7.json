@@ -1,0 +1,6 @@
+{
+    "uuid": "2487eff1-163c-4036-ab25-82dca022461c",
+    "reference_label": "sl7",
+    "name_label": "Scientific Linux 7",
+    "derived_from": "el7.json"
+}
