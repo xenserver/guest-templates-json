@@ -345,7 +345,7 @@ class BaseTemplate(BlankTemplate):
             if defaults or k in template:
                 self.__dict__[k] = template.get(k, '')
 
-        blacklist = ('platform', 'other_config', 'recommendations', 'disks')
+        blacklist = ('platform', 'other_config', 'recommendations', 'disks', 'has_vendor_device')
 
         # apply template values over current values
         filtered_template = {k: v for k, v in template.iteritems() if k not in blacklist}
