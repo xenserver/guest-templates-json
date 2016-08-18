@@ -1,0 +1,6 @@
+{
+    "uuid": "b8bb4fa8-c1ca-4862-a4ed-350c07043f74",
+    "reference_label": "sl-5-32bit",
+    "name_label": "Scientific Linux 5 (32-bit)",
+    "derived_from": "el-5-32bit.json"
+}

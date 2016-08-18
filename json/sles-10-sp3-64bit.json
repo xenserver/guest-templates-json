@@ -1,0 +1,6 @@
+{
+    "uuid": "881018b3-0451-4295-a730-03ed7507bb2e",
+    "reference_label": "sles-10-sp3-64bit",
+    "name_label": "SUSE Linux Enterprise Server 10 SP3 (64-bit)",
+    "derived_from": "suse-pv-64bit.json"
+}

@@ -1,0 +1,16 @@
+{
+    "uuid": "552bce37-51b2-445d-84f2-5f33fa112d7e",
+    "reference_label": "other-install-media",
+    "name_label": "Other install media",
+    "name_description": "Template which allows VM installation from install media",
+    "min_memory": "128M",
+    "max_memory": "128G",
+    "vcpus_max": 32,
+    "number_of_vbds": 255,
+    "number_of_vifs": 7,
+    "other_config": {
+        "install-methods": "cdrom"
+    },
+    "HVM_boot_policy": "BIOS order",
+    "HVM_boot_params": { "order": "dc" }
+}

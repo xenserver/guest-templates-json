@@ -1,0 +1,13 @@
+{
+    "name_description": "Template that allows VM installation from Xen-aware Debian-based distros. To use this template from the CLI, install your VM using vm-install, then set other-config-install-repository to the path to your network repository, e.g. http://<server>/<path>",
+    "derived_from": "pvlinux.json",
+    "min_memory": "128M",
+    "max_memory": "32G",
+    "disks": [ { "size": "8G" } ],
+    "PV_args": "-- quiet console=hvc0",
+    "other_config": {
+        "install-distro": "debianlike",
+        "install-methods": "cdrom,http,ftp"
+    }
+}
+

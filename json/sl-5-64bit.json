@@ -1,0 +1,6 @@
+{
+    "uuid": "df12cf4e-7890-4917-a5d0-29996dba24ce",
+    "reference_label": "sl-5-64bit",
+    "name_label": "Scientific Linux 5 (64-bit)",
+    "derived_from": "el-5-64bit.json"
+}

@@ -1,0 +1,10 @@
+{
+    "vcpus_max": 32,
+    "number_of_vbds": 255,
+    "number_of_vifs": 7,
+    "other_config": {
+        "linux_template": "true",
+        "install-methods": "cdrom,nfs,http,ftp"
+    },
+    "PV_bootloader": "eliloader"
+}

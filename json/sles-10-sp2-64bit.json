@@ -1,0 +1,6 @@
+{
+    "uuid": "65bb46aa-3c08-42e1-be0c-75621a3aea46",
+    "reference_label": "sles-10-sp2-64bit",
+    "name_label": "SUSE Linux Enterprise Server 10 SP2 (64-bit)",
+    "derived_from": "suse-pv-64bit.json"
+}

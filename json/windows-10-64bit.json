@@ -1,0 +1,10 @@
+{
+    "uuid": "7774689b-4ca1-4dea-8545-dddd6b64c17f",
+    "reference_label": "windows-10-64bit",
+    "name_label": "Windows 10 (64-bit)",
+    "name_description": "Clones of this template will automatically provision their storage when first booted and then reconfigure themselves with the optimal settings for Windows 10 (64-bit).",
+    "derived_from": "windows-8-generic.json",
+    "min_memory": "2G",
+    "max_memory": "1536G",
+    "disks": [ { "size": "24G", "bootable": false } ]
+}

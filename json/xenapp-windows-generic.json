@@ -1,0 +1,7 @@
+{
+    "derived_from": "windows.json",
+    "other_config": {
+        "application_template": "1"
+    },
+    "HVM_shadow_multiplier": 4.0
+}

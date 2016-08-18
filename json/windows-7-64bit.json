@@ -1,0 +1,10 @@
+{
+    "uuid": "92c21ae3-5eb4-474b-9729-afa58dfde98b",
+    "reference_label": "windows-7-64bit",
+    "name_label": "Windows 7 (64-bit)",
+    "name_description": "Clones of this template will automatically provision their storage when first booted and then reconfigure themselves with the optimal settings for Windows 7 (64-bit).",
+    "derived_from": "windows.json",
+    "min_memory": "2G",
+    "max_memory": "192G",
+    "disks": [ { "size": "24G", "bootable": false } ]
+}

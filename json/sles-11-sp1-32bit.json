@@ -1,0 +1,6 @@
+{
+    "uuid": "da36e5b6-714a-44fa-a502-7d08d9838e2c",
+    "reference_label": "sles-11-sp1-32bit",
+    "name_label": "SUSE Linux Enterprise Server 11 SP1 (32-bit)",
+    "derived_from": "suse-pv-32bit.json"
+}

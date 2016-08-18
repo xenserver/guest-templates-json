@@ -1,0 +1,7 @@
+{
+    "derived_from": "debian-pv.json",
+    "other_config": {
+        "debian-release": "maverick",
+        "install-methods": "http,ftp"
+    }
+}

@@ -1,0 +1,10 @@
+{
+    "uuid": "0e9d218d-03ef-49be-934a-dbc47c206957",
+    "reference_label": "ubuntu-10.04-32bit",
+    "name_label": "Ubuntu Lucid Lynx 10.04 (32-bit)",
+    "derived_from": "ubuntu-10.04-generic.json",
+    "vcpus_max": 8,
+    "other_config": {
+        "install-arch": "i386"
+    }
+}

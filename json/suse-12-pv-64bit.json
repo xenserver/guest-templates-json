@@ -1,0 +1,5 @@
+{
+    "derived_from": "suse-pv-64bit.json",
+    "PV_args": "console=xvc0 xencons=xvc"
+}
+

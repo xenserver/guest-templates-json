@@ -1,6 +1,0 @@
-{
-    "uuid": "11da4fc1-6296-464b-a130-5a88207b99d8",
-    "reference_label": "oracle7",
-    "name_label": "Oracle Linux 7",
-    "derived_from": "el7.json"
-}

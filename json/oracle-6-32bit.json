@@ -1,0 +1,6 @@
+{
+    "uuid": "71a59bef-0db4-4dd2-8f98-059dcbdab951",
+    "reference_label": "oracle-6-32bit",
+    "name_label": "Oracle Enterprise Linux 6 (32-bit)",
+    "derived_from": "el-6-32bit.json"
+}

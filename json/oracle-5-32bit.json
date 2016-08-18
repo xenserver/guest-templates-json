@@ -1,0 +1,7 @@
+{
+    "uuid": "3a332616-7410-4dc7-8d57-c12f5291c34b",
+    "reference_label": "oracle-5-32bit",
+    "name_label": "Oracle Enterprise Linux 5 (32-bit)",
+    "derived_from": "el-5-32bit.json",
+    "max_memory": "64G"
+}

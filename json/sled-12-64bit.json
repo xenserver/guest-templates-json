@@ -1,0 +1,6 @@
+{
+    "uuid": "89a9ab32-39a2-47db-8f11-25be020a16cf",
+    "reference_label": "sled-12-64bit",
+    "name_label": "SUSE Linux Enterprise Desktop 12 (64-bit)",
+    "derived_from": "suse-12-pv-64bit.json"
+}

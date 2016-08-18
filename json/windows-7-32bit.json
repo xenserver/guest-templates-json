@@ -1,0 +1,10 @@
+{
+    "uuid": "5f2d0b8c-f80a-49ef-986a-03d65e449f2e",
+    "reference_label": "windows-7-32bit",
+    "name_label": "Windows 7 (32-bit)",
+    "name_description": "Clones of this template will automatically provision their storage when first booted and then reconfigure themselves with the optimal settings for Windows 7 (32-bit).",
+    "derived_from": "windows.json",
+    "min_memory": "1G",
+    "max_memory": "4G",
+    "disks": [ { "size": "24G", "bootable": false } ]
+}

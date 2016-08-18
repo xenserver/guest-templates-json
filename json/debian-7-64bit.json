@@ -1,0 +1,11 @@
+{
+    "uuid": "28387a39-63c3-46cc-a0ec-e71807f72383",
+    "reference_label": "debian-7-64bit",
+    "name_label": "Debian Wheezy 7.0 (64-bit)",
+    "derived_from": "debian-pv.json",
+    "max_memory": "128G",
+    "other_config": {
+        "debian-release": "wheezy",
+        "install-arch": "amd64"
+    }
+}

@@ -1,0 +1,11 @@
+{
+    "uuid": "15e93e84-fd4b-468c-9505-73752405cf65",
+    "reference_label": "ubuntu-12.04-64bit",
+    "name_label": "Ubuntu Precise Pangolin 12.04 (64-bit)",
+    "derived_from": "debian-pv.json",
+    "max_memory": "128G",
+    "other_config": {
+        "debian-release": "precise",
+        "install-arch": "amd64"
+    }
+}

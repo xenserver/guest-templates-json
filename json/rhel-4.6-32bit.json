@@ -1,0 +1,9 @@
+{
+    "uuid": "e60f892b-b39d-4dbc-b834-ae3d605ad69f",
+    "reference_label": "rhel-4.6-32bit",
+    "name_label": "Red Hat Enterprise Linux 4.6 (32-bit)",
+    "derived_from": "el-4-32bit.json",
+    "other_config": {
+        "suppress-spurious-page-faults": "true"
+    }
+}

@@ -1,0 +1,6 @@
+{
+    "uuid": "15828343-5b0d-4b86-a2da-56278c3b8c68",
+    "reference_label": "centos-6-64bit",
+    "name_label": "CentOS 6 (64-bit)",
+    "derived_from": "el-6-64bit.json"
+}

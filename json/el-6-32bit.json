@@ -1,0 +1,8 @@
+{
+    "derived_from": "rhel-pv.json",
+    "max_memory": "16G",
+    "other_config": {
+        "rhel6": "true"
+    }
+}
+

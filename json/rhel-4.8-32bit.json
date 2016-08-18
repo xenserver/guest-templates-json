@@ -1,0 +1,9 @@
+{
+    "uuid": "60d94444-43ad-4534-9aa1-1b3138811d85",
+    "reference_label": "rhel-4.8-32bit",
+    "name_label": "Red Hat Enterprise Linux 4.8 (32-bit)",
+    "derived_from": "el-4-32bit.json",
+    "other_config": {
+        "machine-address-size": "36"
+    }
+}

@@ -1,0 +1,8 @@
+{
+    "uuid": "79abf1d8-4b61-4fc3-aafa-58b0ccae48d3",
+    "reference_label": "debian-8",
+    "name_label": "Debian Jessie 8.0",
+    "derived_from": "hvmlinux.json",
+    "min_memory": "128M",
+    "disks": [ { "size": "8G" } ]
+}

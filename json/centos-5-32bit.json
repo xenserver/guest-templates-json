@@ -1,0 +1,6 @@
+{
+    "uuid": "1d11a7b9-0eec-479c-8fba-8ce4be598e43",
+    "reference_label": "centos-5-32bit",
+    "name_label": "CentOS 5 (32-bit)",
+    "derived_from": "el-5-32bit.json"
+}

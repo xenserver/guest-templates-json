@@ -1,0 +1,17 @@
+{
+    "name_description": "Clones of this template will automatically provision their storage when first booted and then reconfigure themselves with the optimal settings.",
+    "vcpus_max": 32,
+    "number_of_vbds": 255,
+    "number_of_vifs": 7,
+    "other_config": {
+        "install-methods": "cdrom"
+    },
+    "nx": true,
+    "viridian": true,
+    "viridian_time_ref_count": true,
+    "viridian_reference_tsc": true,
+    "has_vendor_device": true,
+    "device_id": "0002",
+    "HVM_boot_policy": "BIOS order",
+    "HVM_boot_params": { "order": "dc" }
+}

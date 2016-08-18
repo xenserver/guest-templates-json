@@ -1,0 +1,6 @@
+{
+    "derived_from": "windows.json",
+    "vga": "std",
+    "videoram": "8M",
+    "generation_id": "0:0"
+}

@@ -1,0 +1,6 @@
+{
+    "uuid": "b124ba5e-d512-4ef7-9827-e90a06f43a5c",
+    "reference_label": "oracle-5-64bit",
+    "name_label": "Oracle Enterprise Linux 5 (64-bit)",
+    "derived_from": "el-5-64bit.json"
+}

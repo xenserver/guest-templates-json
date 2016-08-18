@@ -1,0 +1,10 @@
+{
+    "uuid": "c0a2051f-f323-444b-a9d6-588d84eb434a",
+    "reference_label": "ubuntu-10.10-32bit",
+    "name_label": "Ubuntu Maverick Meerkat 10.10 (32-bit) (experimental)",
+    "derived_from": "ubuntu-10.10-generic.json",
+    "vcpus_max": 8,
+    "other_config": {
+        "install-arch": "i386"
+    }
+}

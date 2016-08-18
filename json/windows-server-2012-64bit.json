@@ -1,0 +1,10 @@
+{
+    "uuid": "83af4ddb-e029-48ff-ba7a-11a23ff99caa",
+    "reference_label": "windows-server-2012-64bit",
+    "name_label": "Windows Server 2012 (64-bit)",
+    "name_description": "Clones of this template will automatically provision their storage when first booted and then reconfigure themselves with the optimal settings for Windows Server 2012 (64-bit).",
+    "derived_from": "windows-8-generic.json",
+    "min_memory": "1G",
+    "max_memory": "1536G",
+    "disks": [ { "size": "32G", "bootable": false } ]
+}

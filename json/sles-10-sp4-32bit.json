@@ -1,0 +1,6 @@
+{
+    "uuid": "12136b41-0231-4576-a4d2-6988030ed90c",
+    "reference_label": "sles-10-sp4-32bit",
+    "name_label": "SUSE Linux Enterprise Server 10 SP4 (32-bit)",
+    "derived_from": "suse-pv-32bit.json"
+}

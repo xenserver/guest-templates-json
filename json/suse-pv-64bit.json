@@ -1,0 +1,8 @@
+{
+    "derived_from": "suse-pv.json",
+    "max_memory": "128G",
+    "other_config": {
+        "install-arch": "x86_64"
+    }
+}
+
