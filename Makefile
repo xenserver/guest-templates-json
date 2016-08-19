@@ -10,14 +10,14 @@ CSET_NUMBER := $(shell $(shell $(call git_cset_number,guest-templates)); echo $$
 
 .PHONY: build
 build: srpm
-	$(RPMBUILD) --target $(DOMAIN0_ARCH_OPTIMIZED) -bb $(RPM_SPECSDIR)/guest-templates-new.spec
+	$(RPMBUILD) --target $(DOMAIN0_ARCH_OPTIMIZED) -bb $(RPM_SPECSDIR)/guest-templates-json.spec
 
 .PHONY: srpm
 srpm: $(RPM_DIRECTORIES)
-	cd $(REPO) && git archive --format=tar --prefix=guest-templates-new-$(PKG_VERSION)/ HEAD:json-templates/ \
-		| bzip2 > $(RPM_SOURCESDIR)/guest-templates-new-$(PKG_VERSION).tar.bz2
-	sed 's/@VERSION@/$(PKG_VERSION)/; s/@RELEASE@/$(CSET_NUMBER)/' < guest-templates-new.spec > $(RPM_SPECSDIR)/guest-templates-new.spec
-	$(RPMBUILD) --target $(DOMAIN0_ARCH_OPTIMIZED) -bs $(RPM_SPECSDIR)/guest-templates-new.spec
+	cd $(REPO) && git archive --format=tar --prefix=guest-templates-json-$(PKG_VERSION)/ HEAD:json-templates/ \
+		| bzip2 > $(RPM_SOURCESDIR)/guest-templates-json-$(PKG_VERSION).tar.bz2
+	sed 's/@VERSION@/$(PKG_VERSION)/; s/@RELEASE@/$(CSET_NUMBER)/' < guest-templates-json.spec > $(RPM_SPECSDIR)/guest-templates-json.spec
+	$(RPMBUILD) --target $(DOMAIN0_ARCH_OPTIMIZED) -bs $(RPM_SPECSDIR)/guest-templates-json.spec
 
 .PHONY: clean
 clean:

@@ -1,9 +1,9 @@
-Name:    guest-templates-new
+Name:    guest-templates-json
 Summary: Creates the default guest templates
 Version: @VERSION@
 Release: @RELEASE@
 License: BSD
-Source0: guest-templates-new-%{version}.tar.bz2
+Source0: guest-templates-json-%{version}.tar.bz2
 BuildArch: noarch
 
 BuildRequires: python2-devel
