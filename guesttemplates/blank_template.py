@@ -51,12 +51,10 @@ class Platform(object):
             self.videoram = str(amount_to_int(data['videoram']) >> 20)
         if defaults or 'viridian' in data:
             self.viridian = 'true' if get_bool_key(data, 'viridian', True) else 'false'
-        if 'viridian_time_ref_count' in data:
-            self.viridian_time_ref_count = 'true' if get_bool_key(data, 'viridian_time_ref_count', False) else 'false'
-        if 'viridian_reference_tsc' in data:
-            self.viridian_reference_tsc= 'true' if get_bool_key(data, 'viridian_reference_tsc', False) else 'false'
         if 'device_id' in data:
             self.device_id = data['device_id']
+        if 'platform' in data:
+            self.__dict__.update(data['platform'])
 
     def get_platform(self):
         return self.__dict__

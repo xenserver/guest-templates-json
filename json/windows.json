@@ -8,8 +8,10 @@
     },
     "nx": true,
     "viridian": true,
-    "viridian_time_ref_count": true,
-    "viridian_reference_tsc": true,
+    "platform": {
+        "viridian_time_ref_count": "true",
+        "viridian_reference_tsc": "true"
+    },
     "has_vendor_device": true,
     "device_id": "0002",
     "HVM_boot_policy": "BIOS order",
