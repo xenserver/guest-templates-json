@@ -6,5 +6,8 @@
         "linux_template": "true",
         "install-methods": "cdrom,nfs,http,ftp"
     },
+    "platform": {
+        "viridian": "true"
+    },
     "PV_bootloader": "eliloader"
 }

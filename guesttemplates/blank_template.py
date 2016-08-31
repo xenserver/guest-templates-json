@@ -45,14 +45,6 @@ class Platform(object):
             self.pae = 'true' if get_bool_key(data, 'pae', True) else 'false'
         if defaults or 'hpet' in data:
             self.hpet = 'true' if get_bool_key(data, 'hpet', True) else 'false'
-        if 'vga' in data:
-            self.vga = data['vga']
-        if 'videoram' in data:
-            self.videoram = str(amount_to_int(data['videoram']) >> 20)
-        if defaults or 'viridian' in data:
-            self.viridian = 'true' if get_bool_key(data, 'viridian', True) else 'false'
-        if 'device_id' in data:
-            self.device_id = data['device_id']
         if 'platform' in data:
             self.__dict__.update(data['platform'])
 

@@ -6,14 +6,13 @@
     "other_config": {
         "install-methods": "cdrom"
     },
-    "nx": true,
-    "viridian": true,
     "platform": {
+        "device_id": "0002",
+        "viridian": "true",
         "viridian_time_ref_count": "true",
         "viridian_reference_tsc": "true"
     },
     "has_vendor_device": true,
-    "device_id": "0002",
     "HVM_boot_policy": "BIOS order",
     "HVM_boot_params": { "order": "dc" }
 }

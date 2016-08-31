@@ -1,6 +1,8 @@
 {
     "derived_from": "base-windows.json",
-    "vga": "std",
-    "videoram": "8M",
+    "platform": {
+        "vga": "std",
+        "videoram": "8"
+    },
     "generation_id": "0:0"
 }

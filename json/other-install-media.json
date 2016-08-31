@@ -11,6 +11,9 @@
     "other_config": {
         "install-methods": "cdrom"
     },
+    "platform": {
+        "viridian": "true"
+    },
     "HVM_boot_policy": "BIOS order",
     "HVM_boot_params": { "order": "dc" }
 }
