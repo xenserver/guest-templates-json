@@ -1,5 +1,5 @@
 {
-    "derived_from": "windows.json",
+    "derived_from": "base-windows.json",
     "vga": "std",
     "videoram": "8M",
     "generation_id": "0:0"

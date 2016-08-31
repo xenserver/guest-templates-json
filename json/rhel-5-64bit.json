@@ -2,5 +2,5 @@
     "uuid": "29792b3c-bb92-45ce-aae6-8e10bf864640",
     "reference_label": "rhel-5-64bit",
     "name_label": "Red Hat Enterprise Linux 5 (64-bit)",
-    "derived_from": "el-5-64bit.json"
+    "derived_from": "base-el-5-64bit.json"
 }

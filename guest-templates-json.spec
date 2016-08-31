@@ -82,24 +82,28 @@ install -m 755 62-create-guest-templates %{buildroot}%{_sysconfdir}/firstboot.d
 
 %files data-linux
 %defattr(-,root,root,-)
+%{templatedir}/base-debian*.json
+%{templatedir}/base-el*.json
+%{templatedir}/base-hvmlinux.json
+%{templatedir}/base-pvlinux.json
+%{templatedir}/base-sl*.json
+%{templatedir}/base-ubuntu*.json
 %{templatedir}/centos*.json
 %{templatedir}/coreos.json
 %{templatedir}/debian*.json
-%{templatedir}/el*.json
-%{templatedir}/hvmlinux.json
-%{templatedir}/oracle*.json
-%{templatedir}/pvlinux.json
+%{templatedir}/oel*.json
 %{templatedir}/rhel*.json
 %{templatedir}/sl*.json
-%{templatedir}/suse*.json
 %{templatedir}/ubuntu*.json
 
 %files data-windows
 %defattr(-,root,root,-)
+%{templatedir}/base-windows*.json
 %{templatedir}/windows*.json
 
 %files data-xenapp
 %defattr(-,root,root,-)
+%{templatedir}/base-xenapp*.json
 %{templatedir}/xenapp*.json
 
 %files data-other

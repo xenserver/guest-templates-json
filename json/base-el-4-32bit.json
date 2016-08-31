@@ -1,5 +1,5 @@
 {
-    "derived_from": "rhel-pv.json",
+    "derived_from": "base-el-pv.json",
     "min_memory": "256M",
     "max_memory": "16G",
     "number_of_vifs": 3,

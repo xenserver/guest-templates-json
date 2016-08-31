@@ -2,5 +2,5 @@
     "uuid": "ebc94c1c-2532-4765-b2e1-b72db794b6a0",
     "reference_label": "sled-11-sp3-64bit",
     "name_label": "SUSE Linux Enterprise Desktop 11 SP3 (64-bit)",
-    "derived_from": "suse-pv-64bit.json"
+    "derived_from": "base-sle-pv-64bit.json"
 }

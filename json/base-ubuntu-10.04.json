@@ -1,5 +1,5 @@
 {
-    "derived_from": "debian-pv.json",
+    "derived_from": "base-debian-pv.json",
     "other_config": {
         "debian-release": "lucid",
         "install-methods": "http,ftp"

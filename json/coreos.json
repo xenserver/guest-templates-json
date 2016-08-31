@@ -2,7 +2,7 @@
     "uuid": "094706dd-5d22-4830-99b7-c710769c9dcc",
     "reference_label": "coreos",
     "name_label": "CoreOS",
-    "derived_from": "hvmlinux.json",
+    "derived_from": "base-hvmlinux.json",
     "min_memory": "512M",
     "max_memory": "512G",
     "disks": [ { "size": "5G" } ]

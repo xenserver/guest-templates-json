@@ -3,7 +3,7 @@
     "reference_label": "xenapp-windows-server-2008-r2-64bit",
     "name_label": "Citrix XenApp on Windows Server 2008 R2 (64-bit)",
     "name_description": "Clones of this template will automatically provision their storage when first booted and then reconfigure themselves with the optimal settings for Citrix XenApp on Windows Server 2008 R2 (64-bit).",
-    "derived_from": "xenapp-windows-generic.json",
+    "derived_from": "base-xenapp-windows.json",
     "min_memory": "512M",
     "max_memory": "1536G",
     "disks": [ { "size": "24G", "bootable": false } ]

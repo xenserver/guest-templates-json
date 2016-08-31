@@ -2,7 +2,7 @@
     "uuid": "7279a78a-4756-4fc3-99f0-3e7694c0318e",
     "reference_label": "ubuntu-10.04-64bit",
     "name_label": "Ubuntu Lucid Lynx 10.04 (64-bit)",
-    "derived_from": "ubuntu-10.04-generic.json",
+    "derived_from": "base-ubuntu-10.04.json",
     "other_config": {
         "install-arch": "amd64"
     }

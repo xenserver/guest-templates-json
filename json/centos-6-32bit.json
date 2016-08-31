@@ -2,5 +2,5 @@
     "uuid": "0a21ac1d-b18f-469e-9fe7-8bb9d0291574",
     "reference_label": "centos-6-32bit",
     "name_label": "CentOS 6 (32-bit)",
-    "derived_from": "el-6-32bit.json"
+    "derived_from": "base-el-6-32bit.json"
 }

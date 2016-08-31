@@ -2,6 +2,6 @@
     "uuid": "acba9d23-5608-4143-b797-175c22d889c3",
     "reference_label": "sles-10-sp1-32bit",
     "name_label": "SUSE Linux Enterprise Server 10 SP1 (32-bit)",
-    "derived_from": "suse-pv-32bit.json",
+    "derived_from": "base-sle-pv-32bit.json",
     "number_of_vifs": 3
 }

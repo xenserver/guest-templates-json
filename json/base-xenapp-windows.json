@@ -1,5 +1,5 @@
 {
-    "derived_from": "windows.json",
+    "derived_from": "base-windows.json",
     "other_config": {
         "application_template": "1"
     },

@@ -2,7 +2,7 @@
     "uuid": "3a249b5e-b38d-4795-b0aa-cda9ff320a56",
     "reference_label": "ubuntu-10.10-64bit",
     "name_label": "Ubuntu Maverick Meerkat 10.10 (64-bit) (experimental)",
-    "derived_from": "ubuntu-10.10-generic.json",
+    "derived_from": "base-ubuntu-10.10.json",
     "other_config": {
         "install-arch": "amd64"
     }

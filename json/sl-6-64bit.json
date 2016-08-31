@@ -2,5 +2,5 @@
     "uuid": "50ea05dd-db33-41e4-ab69-47a1e7d4b978",
     "reference_label": "sl-6-64bit",
     "name_label": "Scientific Linux 6 (64-bit)",
-    "derived_from": "el-6-64bit.json"
+    "derived_from": "base-el-6-64bit.json"
 }

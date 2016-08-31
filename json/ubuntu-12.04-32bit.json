@@ -2,7 +2,7 @@
     "uuid": "abfee665-a260-4aea-8d55-c75e19392133",
     "reference_label": "ubuntu-12.04-32bit",
     "name_label": "Ubuntu Precise Pangolin 12.04 (32-bit)",
-    "derived_from": "debian-pv.json",
+    "derived_from": "base-debian-pv.json",
     "vcpus_max": 8,
     "PV_args": "-- quiet console=hvc0 d-i:base-installer/kernel/image=linux-generic-pae",
     "other_config": {

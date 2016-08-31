@@ -2,7 +2,7 @@
     "uuid": "0c13fc58-11ae-435f-9c29-a0b3a104947a",
     "reference_label": "centos-4.8-32bit",
     "name_label": "CentOS 4.8 (32-bit)",
-    "derived_from": "el-4-32bit.json",
+    "derived_from": "base-el-4-32bit.json",
     "other_config": {
         "machine-address-size": "36"
     }

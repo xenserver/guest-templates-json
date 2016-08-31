@@ -2,6 +2,6 @@
     "uuid": "315de5c5-e120-4917-aed8-388052637d38",
     "reference_label": "sles-10-sp1-64bit",
     "name_label": "SUSE Linux Enterprise Server 10 SP1 (64-bit)",
-    "derived_from": "suse-pv-64bit.json",
+    "derived_from": "base-sle-pv-64bit.json",
     "number_of_vifs": 3
 }

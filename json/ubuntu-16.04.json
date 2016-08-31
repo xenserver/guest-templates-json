@@ -2,7 +2,7 @@
     "uuid": "e9763585-f70a-4526-bfcb-822064742e9f",
     "reference_label": "ubuntu-16.04",
     "name_label": "Ubuntu Xenial Xerus 16.04",
-    "derived_from": "hvmlinux.json",
+    "derived_from": "base-hvmlinux.json",
     "min_memory": "512M",
     "disks": [ { "size": "10G" } ]
 }
