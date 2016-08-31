@@ -42,6 +42,8 @@ Requires(post): %{name} = %{version}-%{release}
 %description data-other
 Contains the default other guest templates.
 
+%define templatedir %{_datadir}/xapi/vm-templates
+
 %prep
 %setup -q
 
@@ -51,8 +53,8 @@ Contains the default other guest templates.
 %install
 %{__python2} setup.py install --root %{buildroot}
 
-install -d %{buildroot}%{_datadir}/xapi/vm-templates
-install -m 644 json/*.json %{buildroot}%{_datadir}/xapi/vm-templates
+install -d %{buildroot}%{templatedir}
+install -m 644 json/*.json %{buildroot}%{templatedir}
 install -d %{buildroot}%{_sysconfdir}/xapi.d/vm-templates
 
 install -d %{buildroot}%{_sysconfdir}/firstboot.d
@@ -74,34 +76,34 @@ install -m 755 62-create-guest-templates %{buildroot}%{_sysconfdir}/firstboot.d
 %defattr(-,root,root,-)
 %{_bindir}/*
 %{python2_sitelib}/*
-%dir %{_datadir}/xapi/vm-templates
+%dir %{templatedir}
 %{_sysconfdir}/xapi.d/*
 %{_sysconfdir}/firstboot.d/*
 
 %files data-linux
 %defattr(-,root,root,-)
-%{_datadir}/xapi/vm-templates/centos*.json
-%{_datadir}/xapi/vm-templates/coreos.json
-%{_datadir}/xapi/vm-templates/debian*.json
-%{_datadir}/xapi/vm-templates/el*.json
-%{_datadir}/xapi/vm-templates/hvmlinux.json
-%{_datadir}/xapi/vm-templates/oracle*.json
-%{_datadir}/xapi/vm-templates/pvlinux.json
-%{_datadir}/xapi/vm-templates/rhel*.json
-%{_datadir}/xapi/vm-templates/sl*.json
-%{_datadir}/xapi/vm-templates/suse*.json
-%{_datadir}/xapi/vm-templates/ubuntu*.json
+%{templatedir}/centos*.json
+%{templatedir}/coreos.json
+%{templatedir}/debian*.json
+%{templatedir}/el*.json
+%{templatedir}/hvmlinux.json
+%{templatedir}/oracle*.json
+%{templatedir}/pvlinux.json
+%{templatedir}/rhel*.json
+%{templatedir}/sl*.json
+%{templatedir}/suse*.json
+%{templatedir}/ubuntu*.json
 
 %files data-windows
 %defattr(-,root,root,-)
-%{_datadir}/xapi/vm-templates/windows*.json
+%{templatedir}/windows*.json
 
 %files data-xenapp
 %defattr(-,root,root,-)
-%{_datadir}/xapi/vm-templates/xenapp*.json
+%{templatedir}/xenapp*.json
 
 %files data-other
 %defattr(-,root,root,-)
-%{_datadir}/xapi/vm-templates/other-install-media.json
+%{templatedir}/other-install-media.json
 
 %changelog
