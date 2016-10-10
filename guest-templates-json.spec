@@ -6,6 +6,7 @@ License: BSD
 Source0: guest-templates-json-%{version}.tar.bz2
 BuildArch: noarch
 
+Requires: xapi-core
 BuildRequires: python2-devel
 BuildRequires: python-setuptools
 
