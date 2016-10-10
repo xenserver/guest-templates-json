@@ -70,6 +70,9 @@ install -m 755 62-create-guest-templates %{buildroot}%{_sysconfdir}/firstboot.d
 %post data-windows
 /usr/bin/create-guest-templates > /dev/null ||:
 
+%post data-xenapp
+/usr/bin/create-guest-templates > /dev/null ||:
+
 %post data-other
 /usr/bin/create-guest-templates > /dev/null ||:
 
