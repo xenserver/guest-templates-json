@@ -20,6 +20,6 @@ if __name__ == '__main__':
     except IOError as e:
         # If running during host installation, XAPI won't be available so just
         # fail silently.
-        if e.errno == errno.ECONNREFUSED:
+        if e.errno in (errno.ECONNREFUSED, errno.ENOENT):
             exit(1)
         raise
