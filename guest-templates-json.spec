@@ -89,12 +89,14 @@ install -m 755 62-create-guest-templates %{buildroot}%{_sysconfdir}/firstboot.d
 %{templatedir}/base-debian*.json
 %{templatedir}/base-el*.json
 %{templatedir}/base-hvmlinux.json
+%{templatedir}/base-kylin*.json
 %{templatedir}/base-pvlinux.json
 %{templatedir}/base-sl*.json
 %{templatedir}/base-ubuntu*.json
 %{templatedir}/centos*.json
 %{templatedir}/coreos.json
 %{templatedir}/debian*.json
+%{templatedir}/kylin*.json
 %{templatedir}/oel*.json
 %{templatedir}/rhel*.json
 %{templatedir}/sl*.json
