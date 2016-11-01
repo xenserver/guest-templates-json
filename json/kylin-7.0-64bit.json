@@ -1,9 +1,6 @@
 {
     "uuid": "7279a78a-4756-4fc3-99f0-3e7694c0319e",
     "reference_label": "kylin-7.0-64bit",
-    "name_label": "kylin 7.0 (64-bit)",
-    "derived_from": "base-kylin-7-64bit.json",
-    "other_config": {
-        "install-arch": "amd64"
-    }
+    "name_label": "NeoKylin Linux 7",
+    "derived_from": "base-kylin-7-64bit.json"
 }
