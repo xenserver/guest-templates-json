@@ -1,7 +1,7 @@
 {
     "uuid": "7279a78a-4756-4fc3-99f0-3e7694c0318f",
     "reference_label": "kylin-server-6-64bit",
-    "name_label": "NeoKylin Linux Server 6 (64 bit)",
+    "name_label": "NeoKylin Linux Server 6 (64-bit)",
     "derived_from": "base-kylin-6-64bit.json",
     "other_config": {
         "install-arch": "amd64"
