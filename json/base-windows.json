@@ -10,7 +10,7 @@
     },
     "platform": {
         "device_id": "0002",
-        "cores-per-socket": "2",
+        "cores-per-socket":, "2",
         "viridian": "true",
         "viridian_time_ref_count": "true",
         "viridian_reference_tsc": "true"
