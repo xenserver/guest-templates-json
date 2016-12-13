@@ -32,6 +32,16 @@ class Loader(object):
         version = record['software_version']['xapi']
         self._xapi_version = version.split('.')
 
+        # Workaround to check presence of is-default-template field
+        # without generating backtraces
+        query = 'field "is_control_domain" = "true"'
+        vms = session.xenapi.VM.get_all_records_where(query)
+        _, test_vm = vms.popitem()
+        if "is_default_template" in test_vm:
+            self._has_default_template_field = True
+        else:
+            self._has_default_template_field = False
+
     def find_config_files(self, *args):
         """Create a dictionary of the template configs on the filesystem."""
 
@@ -68,9 +78,12 @@ class Loader(object):
         """Destroy a template in XAPI."""
 
         log("Destroy %s" % record['uuid'])
+        if self._has_default_template_field:
+            self._session.xenapi.VM.set_is_default_template(ref, False)
+        else:
+            record['other_config']['default_template'] = 'false'
+            self._session.xenapi.VM.set_other_config(ref, record['other_config'])
         self._session.xenapi.VM.set_is_a_template(ref, False)
-        record['other_config']['default_template'] = 'false'
-        self._session.xenapi.VM.set_other_config(ref, record['other_config'])
         self._session.xenapi.VM.destroy(ref)
 
     def remove_old_templates(self):
@@ -83,8 +96,8 @@ class Loader(object):
             uuid = record['uuid']
             reflabel = record.get('reference_label', None)
 
-            if (record['other_config'].has_key('default_template') and
-                    record['other_config']['default_template'] == 'true'):
+            if record.get('is_default_template', False) or (
+                    record['other_config'].get('default_template', 'false') == 'true'):
                 if (uuid in self._by_uuid and
                         record['user_version'] != str(self._by_uuid[uuid].user_version)):
                     self._destroy_template(ref, record)
@@ -156,9 +169,13 @@ class Loader(object):
 
         # Set default_template = true
         template_ref = self._session.xenapi.VM.get_by_uuid(template.uuid)
-        other_config = self._session.xenapi.VM.get_other_config(template_ref)
-        other_config['default_template'] = 'true'
-        self._session.xenapi.VM.set_other_config(template_ref, other_config)
+        if self._has_default_template_field:
+            self._session.xenapi.VM.set_is_default_template(template_ref, True)
+        else:
+            other_config = self._session.xenapi.VM.get_other_config(template_ref)
+            other_config['default_template'] = 'true'
+            self._session.xenapi.VM.set_other_config(template_ref, other_config)
+
 
     def insert_templates(self):
         """Insert all known top-level templates into XAPI."""
