@@ -37,10 +37,7 @@ class Loader(object):
         query = 'field "is_control_domain" = "true"'
         vms = session.xenapi.VM.get_all_records_where(query)
         _, test_vm = vms.popitem()
-        if "is_default_template" in test_vm:
-            self._has_default_template_field = True
-        else:
-            self._has_default_template_field = False
+        self._has_default_template_field = "is_default_template" in test_vm
 
     def find_config_files(self, *args):
         """Create a dictionary of the template configs on the filesystem."""
