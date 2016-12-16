@@ -19,7 +19,7 @@ check_has_default_template_field() {
     # disable set -e option saving current options state, then reinstate it before returning
     old_set=$-; set +e
     ctrl_domain=$(xe vm-list is-control-domain=true --minimal)
-    $XE vm-param-list uuid=$ctrl_domain | grep -q is-default-template
+    $XE vm-param-get param-name=is-default-template uuid=$ctrl_domain &> /dev/null
     has_new_key=$?
     set -$old_set
     return $has_new_key
