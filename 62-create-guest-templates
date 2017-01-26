@@ -18,9 +18,8 @@ this_host_is_master(){
 check_has_default_template_field() {
     # disable set -e option saving current options state, then reinstate it before returning
     old_set=$-; set +e
-    ctrl_domain=$(xe vm-list is-control-domain=true --minimal)
-    $XE vm-param-get param-name=is-default-template uuid=$ctrl_domain &> /dev/null
-    has_new_key=$?
+    has_new_key=1
+    $XE vm-param-get param-name=is-default-template uuid=$CONTROL_DOMAIN_UUID &>/dev/null && has_new_key=0
     set -$old_set
     return $has_new_key
 }
