@@ -169,6 +169,7 @@ class BlankTemplate(object):
         self.power_state = PowerStates.Halted
         self.user_version = 1
         self.is_a_template = True
+        #self.is_default_template = False # if available, already defaults to False
         self.suspend_VDI = "OpaqueRef:NULL"
         self.resident_on = "OpaqueRef:NULL"
         self.affinity = "OpaqueRef:NULL"
