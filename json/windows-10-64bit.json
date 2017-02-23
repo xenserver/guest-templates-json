@@ -3,7 +3,7 @@
     "reference_label": "windows-10-64bit",
     "name_label": "Windows 10 (64-bit)",
     "name_description": "Clones of this template will automatically provision their storage when first booted and then reconfigure themselves with the optimal settings for Windows 10 (64-bit).",
-    "derived_from": "base-windows-8.json",
+    "derived_from": "base-windows-10.json",
     "min_memory": "2G",
     "max_memory": "1536G",
     "disks": [ { "size": "24G", "bootable": false } ]
