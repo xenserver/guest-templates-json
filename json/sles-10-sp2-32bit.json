@@ -1,6 +1,0 @@
-{
-    "uuid": "23770a28-62bc-49bd-a7da-36c7f4192400",
-    "reference_label": "sles-10-sp2-32bit",
-    "name_label": "SUSE Linux Enterprise Server 10 SP2 (32-bit)",
-    "derived_from": "base-sle-pv-32bit.json"
-}
