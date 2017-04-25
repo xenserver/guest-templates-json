@@ -1,9 +1,0 @@
-{
-    "uuid": "4725d79f-be7d-4ff8-af64-0880a24dd340",
-    "reference_label": "centos-4.5-32bit",
-    "name_label": "CentOS 4.5 (32-bit)",
-    "derived_from": "base-el-4-32bit.json",
-    "other_config": {
-        "suppress-spurious-page-faults": "true"
-    }
-}
