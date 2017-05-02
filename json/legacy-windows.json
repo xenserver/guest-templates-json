@@ -4,7 +4,7 @@
     "name_label": "Legacy Windows",
     "name_description": "Template for installations of unsupported versions of Windows",
     "min_memory": "128M",
-    "max_memory": "128G",
+    "max_memory": "1024G",
     "vcpus_max": 32,
     "number_of_vbds": 255,
     "number_of_vifs": 7,
@@ -16,4 +16,5 @@
     },
     "HVM_boot_policy": "BIOS order",
     "HVM_boot_params": { "order": "dc" }
+    "disks": [ { "size": "24G", "bootable": false } ]
 }
