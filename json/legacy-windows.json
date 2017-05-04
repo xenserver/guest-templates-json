@@ -15,6 +15,6 @@
         "viridian": "true"
     },
     "HVM_boot_policy": "BIOS order",
-    "HVM_boot_params": { "order": "dc" }
+    "HVM_boot_params": { "order": "dc" },
     "disks": [ { "size": "24G", "bootable": false } ]
 }
