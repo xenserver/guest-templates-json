@@ -1,0 +1,6 @@
+{
+   "uuid": "7bed1d01-3c40-11e7-83a5-64006a84d229",
+   "reference_label": "turbo-12-64bit",
+   "name_label": "GreatTurbo Enterprise Server 12 (64-bit)",
+   "derived_from": "base-el-6-64bit.json"
+}
