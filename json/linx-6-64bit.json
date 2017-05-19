@@ -1,0 +1,11 @@
+{
+    "uuid": "01392692-40f4-11e7-8f67-64006a84d229",
+    "reference_label": "linx-6-64bit",
+    "name_label": "Linx Linux 6 (64-bit)",
+    "derived_from": "base-debian-pv.json",
+    "min_memory": "512M",
+    "other_config": {
+        "debian-release": "squeeze",
+        "install-arch": "amd64"
+    }
+}

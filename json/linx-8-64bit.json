@@ -1,0 +1,8 @@
+{
+    "uuid": "808365c2-3fa8-11e7-9807-64006a84d229",
+    "reference_label": "linx-8-64bit",
+    "name_label": "Linx Linux 8 (64-bit)",
+    "derived_from": "base-hvmlinux.json",
+    "min_memory": "512M",
+    "disks": [ { "size": "10G" } ]
+}
