@@ -4,5 +4,6 @@
     "name_label": "Linx Linux 6 (64-bit)",
     "derived_from": "base-hvmlinux.json",
     "min_memory": "512M",
+    "vcpus_max": 6,
     "disks": [ { "size": "10G" } ]
 }
