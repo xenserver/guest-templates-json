@@ -1,0 +1,6 @@
+{
+    "uuid": "a2c2f832-97bc-11e7-92b9-b8ca3a97c5fc",
+    "reference_label": "sled-12-sp2-64bit",
+    "name_label": "SUSE Linux Enterprise Desktop 12 SP2 (64-bit)",
+    "derived_from": "base-sle-12-pv-64bit.json"
+}
