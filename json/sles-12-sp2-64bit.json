@@ -1,6 +1,6 @@
 {
   "uuid": "1d504a36-96dd-11e7-92b9-b8ca3a97c5fc",
   "reference_label": "sles-12-sp2-64bit",
-  "name_label": "SUSE Linux Enterpise Server 12 SP2 (64bit)",
+  "name_label": "SUSE Linux Enterprise Server 12 SP2 (64-bit)",
   "derived_from": "base-sle-12-pv-64bit.json"
 }
