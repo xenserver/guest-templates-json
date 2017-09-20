@@ -14,8 +14,7 @@
         "vga": "std",
         "videoram": "8",
         "viridian": "false",
-        "device_id": "0001",
-        "device-model": "qemu-trad"
+        "device_id": "0001"
     },
     "HVM_boot_policy": "BIOS order",
     "HVM_boot_params": { "order": "cdn" }
