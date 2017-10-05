@@ -1,5 +1,5 @@
 {
     "derived_from": "base-hvmlinux.json",
-    "min_memory": "1G",
+    "min_memory": "2G",
     "disks": [ { "size": "10G" } ]
 }
