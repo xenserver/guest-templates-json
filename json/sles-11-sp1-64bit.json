@@ -1,6 +1,0 @@
-{
-    "uuid": "d389ec86-ae3d-4045-9639-e47f5785e656",
-    "reference_label": "sles-11-sp1-64bit",
-    "name_label": "SUSE Linux Enterprise Server 11 SP1 (64-bit)",
-    "derived_from": "base-sle-pv-64bit.json"
-}
