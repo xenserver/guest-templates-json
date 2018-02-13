@@ -12,7 +12,8 @@
         "install-methods": "cdrom"
     },
     "platform": {
-        "viridian": "true"
+        "viridian": "true",
+        "device-model": "qemu-upsteam-compat"
     },
     "HVM_boot_policy": "BIOS order",
     "HVM_boot_params": { "order": "dc" },

@@ -14,7 +14,7 @@
         "viridian": "true",
         "viridian_time_ref_count": "true",
         "viridian_reference_tsc": "true",
-        "device-model": "qemu-trad"
+        "device-model": "qemu-upstream-compat"
     },
     "has_vendor_device": true,
     "HVM_boot_policy": "BIOS order",
