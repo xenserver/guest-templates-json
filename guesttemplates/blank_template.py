@@ -130,6 +130,8 @@ class Recommendations(object):
             self.allow_gpu_passthrough = '1' if get_bool_key(data, 'allow_gpu_passthrough', False) else '0'
         if 'allow_vgpu' in data:
             self.allow_vgpu = '1' if get_bool_key(data, 'allow_vgpu', False) else '0'
+        if 'allow_network_sriov' in data:
+            self.allow_network_sriov = '1' if get_bool_key(data, 'allow_network_sriov', False) else '0'
 
     def toxml(self):
         doc = minidom.Document()
@@ -140,7 +142,8 @@ class Recommendations(object):
                             ('vcpus-max', 'max'),
                             ('has-vendor-device', 'value'),
                             ('allow-gpu-passthrough', 'value'),
-                            ('allow-vgpu', 'value')):
+                            ('allow-vgpu', 'value'),
+                            ('allow-network-sriov', 'value')):
             field_ = field.replace('-', '_')
             if field_ in self.__dict__:
                 entry = doc.createElement('restriction')

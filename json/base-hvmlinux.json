@@ -6,6 +6,8 @@
     "number_of_vifs": 7,
     "allow_gpu_passthrough": true,
     "allow_vgpu": true,
+    "allow_network_sriov": true,
+    "user_version": 2,
     "other_config": {
         "linux_template": "true",
         "install-methods": "cdrom,nfs,http,ftp"
