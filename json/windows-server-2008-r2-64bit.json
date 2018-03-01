@@ -6,5 +6,7 @@
     "derived_from": "base-windows.json",
     "min_memory": "512M",
     "max_memory": "1536G",
+    "allow_network_sriov": true,
+    "user_version": 2,
     "disks": [ { "size": "24G", "bootable": false } ]
 }
