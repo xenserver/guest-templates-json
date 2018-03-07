@@ -2,5 +2,6 @@
     "uuid": "28583880-aa0c-4a6b-ad96-8d71571ac505",
     "reference_label": "oel-6-64bit",
     "name_label": "Oracle Enterprise Linux 6 (64-bit)",
-    "derived_from": "base-el-6-64bit.json"
+    "derived_from": "base-el-6-64bit.json",
+    "PV_args": "graphical utf8 crashkernel=no"
 }
