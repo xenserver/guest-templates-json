@@ -2,5 +2,5 @@
   "uuid": "23c33afa-97bd-11e7-92b9-b8ca3a97c5fc",
   "reference_label": "sles-12-sp3-64bit",
   "name_label": "SUSE Linux Enterprise Server 12 SP3 (64-bit)",
-  "derived_from": "base-sle-12-pv-64bit.json"
+  "derived_from": "base-sle-hvm-64bit.json"
 }
