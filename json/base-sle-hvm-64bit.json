@@ -1,0 +1,8 @@
+{
+    "derived_from": "base-sle-hvm.json",
+    "max_memory": "1536G",
+    "other_config": {
+        "install-arch": "x86_64"
+    }
+}
+
