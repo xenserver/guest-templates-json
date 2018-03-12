@@ -3,5 +3,6 @@
     "reference_label": "oel-6-64bit",
     "name_label": "Oracle Enterprise Linux 6 (64-bit)",
     "derived_from": "base-el-6-64bit.json",
-    "PV_args": "graphical utf8 crashkernel=no"
+    "PV_args": "graphical utf8 crashkernel=no",
+    "user_version": 2
 }
