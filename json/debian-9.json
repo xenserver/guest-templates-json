@@ -3,6 +3,7 @@
     "reference_label": "debian-9",
     "name_label": "Debian Stretch 9.0",
     "derived_from": "base-hvmlinux.json",
-    "min_memory": "128M",
-    "disks": [ { "size": "10G" } ]
+    "min_memory": "256M",
+    "disks": [ { "size": "10G" } ],
+    "user_version": 2
 }
