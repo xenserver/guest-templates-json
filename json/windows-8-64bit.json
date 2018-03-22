@@ -6,5 +6,6 @@
     "derived_from": "base-windows-8.json",
     "min_memory": "2G",
     "max_memory": "512G",
-    "disks": [ { "size": "24G", "bootable": false } ]
+    "disks": [ { "size": "24G", "bootable": false } ],
+    "user_version": 2
 }
