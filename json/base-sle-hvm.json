@@ -2,9 +2,6 @@
     "name_description": "Template that allows VM installation from SLES-based distros. To use this template from the CLI, install your VM using vm-install, then watch the virtual display in XenCenter, and fill in the prompts.",
     "derived_from": "base-hvmlinux.json",
     "min_memory": "1G",
-    "disks": [ { "size": "8G" } ],
-    "other_config": {
-        "install-distro": "sleslike"
-    }
+    "disks": [ { "size": "8G" } ]
 }
 
