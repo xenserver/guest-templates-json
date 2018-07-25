@@ -7,5 +7,7 @@
     "min_memory": "1G",
     "max_memory": "1536G",
     "allow_network_sriov": true,
-    "disks": [ { "size": "32G", "bootable": false } ]
+    "disks": [ { "size": "32G", "bootable": false } ],
+    "supports_uefi": "yes",
+    "supports_secure_boot": "yes"
 }

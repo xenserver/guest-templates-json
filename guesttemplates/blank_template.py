@@ -45,6 +45,8 @@ class Platform(object):
             self.pae = 'true' if get_bool_key(data, 'pae', True) else 'false'
         if defaults or 'hpet' in data:
             self.hpet = 'true' if get_bool_key(data, 'hpet', True) else 'false'
+        if defaults or 'secureboot' in data:
+            self.secureboot = 'true' if get_bool_key(data, 'secureboot', True) else 'false'
         if 'platform' in data:
             self.__dict__.update(data['platform'])
 
@@ -132,6 +134,12 @@ class Recommendations(object):
             self.allow_vgpu = '1' if get_bool_key(data, 'allow_vgpu', False) else '0'
         if 'allow_network_sriov' in data:
             self.allow_network_sriov = '1' if get_bool_key(data, 'allow_network_sriov', False) else '0'
+        if 'supports_bios' in data:
+            self.supports_bios = 'yes' if get_bool_key(data, 'supports_bios', False) else 'no'
+        if 'supports_uefi' in data:
+            self.supports_uefi = 'yes' if get_bool_key(data, 'supports_uefi', False) else 'no'
+        if 'supports_secure_boot' in data:
+            self.supports_secure_boot = 'yes' if get_bool_key(data, 'supports_secure_boot', False) else 'no'
 
     def toxml(self):
         doc = minidom.Document()
@@ -143,7 +151,10 @@ class Recommendations(object):
                             ('has-vendor-device', 'value'),
                             ('allow-gpu-passthrough', 'value'),
                             ('allow-vgpu', 'value'),
-                            ('allow-network-sriov', 'value')):
+                            ('allow-network-sriov', 'value'),
+                            ('supports-bios', 'value'),
+                            ('supports-uefi', 'value'),
+                            ('supports-secure-boot', 'value')):
             field_ = field.replace('-', '_')
             if field_ in self.__dict__:
                 entry = doc.createElement('restriction')

@@ -16,8 +16,12 @@
         "videoram": "8",
         "viridian": "false",
         "device_id": "0001",
-        "device-model": "qemu-upstream-compat"
+        "device-model": "qemu-upstream-compat",
+        "secureboot": "false"
     },
     "HVM_boot_policy": "BIOS order",
-    "HVM_boot_params": { "order": "cdn" }
+    "HVM_boot_params": { "firmware": "bios", "order": "cdn" },
+    "supports_bios": "yes",
+    "supports_uefi": "no",
+    "supports_secure_boot": "no"
 }

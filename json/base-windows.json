@@ -14,9 +14,13 @@
         "viridian": "true",
         "viridian_time_ref_count": "true",
         "viridian_reference_tsc": "true",
-        "device-model": "qemu-upstream-compat"
+        "device-model": "qemu-upstream-compat",
+        "secureboot": "false"
     },
     "has_vendor_device": true,
     "HVM_boot_policy": "BIOS order",
-    "HVM_boot_params": { "order": "dc" }
+    "HVM_boot_params": { "firmware": "bios", "order": "dc" },
+    "supports_bios": "yes",
+    "supports_uefi": "no",
+    "supports_secure_boot": "no"
 }
