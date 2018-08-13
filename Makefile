@@ -1,25 +1,9 @@
-USE_BRANDING := yes
-IMPORT_VERSIONS := yes
-include $(B_BASE)/common.mk
-include $(B_BASE)/rpmbuild.mk
+JSON_FILES := $(shell find json -name '*.json')
+LINT_OPTIONS ?= --forbid duplicate-keys
 
-PKG_VERSION := 1.0
+.PHONY: check
+check: lint-json
 
-REPO = $(call git_loc,guest-templates-json)
-CSET_NUMBER := $(shell $(shell $(call git_cset_number,guest-templates-json)); echo $$CSET_NUMBER)
-
-.PHONY: build
-build: srpm
-	$(RPMBUILD) --target $(DOMAIN0_ARCH_OPTIMIZED) -bb $(RPM_SPECSDIR)/guest-templates-json.spec
-
-.PHONY: srpm
-srpm: $(RPM_DIRECTORIES)
-	cd $(REPO) && git archive --format=tar --prefix=guest-templates-json-$(PKG_VERSION)/ HEAD \
-		| bzip2 > $(RPM_SOURCESDIR)/guest-templates-json-$(PKG_VERSION).tar.bz2
-	sed 's/@VERSION@/$(PKG_VERSION)/; s/@RELEASE@/$(CSET_NUMBER)/' < guest-templates-json.spec > $(RPM_SPECSDIR)/guest-templates-json.spec
-	$(RPMBUILD) --target $(DOMAIN0_ARCH_OPTIMIZED) -bs $(RPM_SPECSDIR)/guest-templates-json.spec
-
-.PHONY: clean
-clean:
-	rm -f $(OUTPUT)
-	$(MAKE) -C $(REPO) clean
+.PHONY: lint-json
+lint-json: $(JSON_FILES)
+	jsonlint $(LINT_OPTIONS) $^
