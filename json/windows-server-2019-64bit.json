@@ -1,0 +1,11 @@
+{
+    "uuid": "d986ea98-09fa-4e9a-9ee6-e6c78119496f",
+    "reference_label": "windows-server-2019-64bit",
+    "name_label": "Windows Server 2019 (64-bit)",
+    "name_description": "Clones of this template will automatically provision their storage when first booted and then reconfigure themselves with the optimal settings for Windows Server 2019 (64-bit).",
+    "derived_from": "base-windows-8.json",
+    "min_memory": "1G",
+    "max_memory": "1536G",
+    "allow_network_sriov": true,
+    "disks": [ { "size": "32G", "bootable": false } ]
+}
