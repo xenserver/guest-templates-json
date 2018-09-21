@@ -83,8 +83,8 @@ class Loader(object):
         self._session.xenapi.VM.set_is_a_template(ref, False)
         self._session.xenapi.VM.destroy(ref)
 
-    def remove_old_templates(self):
-        """Remove outdated templates in XAPI."""
+    def remove_default_templates(self):
+        """Remove default templates in XAPI."""
 
         query = 'field "is_a_template" = "true" and field "is_a_snapshot" = "false"'
         templates = self._session.xenapi.VM.get_all_records_where(query)
@@ -95,15 +95,8 @@ class Loader(object):
 
             if record.get('is_default_template', False) or (
                     record['other_config'].get('default_template', 'false') == 'true'):
-                if (uuid in self._by_uuid and
-                        record['user_version'] != str(self._by_uuid[uuid].user_version)):
-                    self._destroy_template(ref, record)
-                    continue
-
-                if (reflabel and reflabel in self._by_reflabel and
-                        uuid != self._by_reflabel[reflabel].uuid):
-                    self._destroy_template(ref, record)
-                    continue
+                self._destroy_template(ref, record)
+                continue
 
             if uuid in self._by_uuid:
                 del self._by_uuid[uuid]

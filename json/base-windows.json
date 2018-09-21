@@ -5,7 +5,6 @@
     "VCPUs_max": 2,
     "number_of_vbds": 255,
     "number_of_vifs": 7,
-    "user_version": 2,
     "other_config": {
         "install-methods": "cdrom"
     },

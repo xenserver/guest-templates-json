@@ -13,7 +13,7 @@ if __name__ == '__main__':
         loader.find_config_files("/usr/share/xapi/vm-templates",
                                  "/etc/xapi.d/vm-templates")
         loader.load_templates()
-        loader.remove_old_templates()
+        loader.remove_default_templates()
         loader.insert_templates()
 
         session.xenapi.session.logout()
