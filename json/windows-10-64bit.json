@@ -8,5 +8,9 @@
     "max_memory": "1536G",
     "disks": [ { "size": "24G", "bootable": false } ],
     "supports_uefi": "yes",
-    "supports_secure_boot": "yes"
+    "supports_secure_boot": "yes",
+    "platform": {
+        "secureboot": "true"
+    },
+    "HVM_boot_params": { "firmware": "uefi", "order": "cd" }
 }

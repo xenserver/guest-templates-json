@@ -9,5 +9,9 @@
     "allow_network_sriov": true,
     "disks": [ { "size": "32G", "bootable": false } ],
     "supports_uefi": "yes",
-    "supports_secure_boot": "yes"
+    "supports_secure_boot": "yes",
+    "platform": {
+        "secureboot": "true"
+    },
+    "HVM_boot_params": { "firmware": "uefi", "order": "cd" }
 }
