@@ -10,7 +10,8 @@
     "supports_uefi": "yes",
     "supports_secure_boot": "yes",
     "platform": {
-        "secureboot": "true"
+        "secureboot": "true",
+        "acpi_laptop_slate": "1"
     },
     "HVM_boot_params": { "firmware": "uefi", "order": "cd" }
 }

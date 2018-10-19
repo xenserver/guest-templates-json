@@ -1,6 +1,0 @@
-{
-    "derived_from": "base-windows-8.json",
-    "platform": {
-        "acpi_laptop_slate": "1"
-    }
-}
