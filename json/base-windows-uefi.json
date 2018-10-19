@@ -1,0 +1,9 @@
+{
+    "derived_from": "base-windows-8.json",
+    "HVM_boot_params": { "firmware": "uefi", "order": "cd" },
+    "platform": {
+        "secureboot": "true"
+    },
+    "supports_uefi": "yes",
+    "supports_secure_boot": "yes"
+}
