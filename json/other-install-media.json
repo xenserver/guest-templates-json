@@ -13,7 +13,6 @@
     },
     "platform": {
         "viridian": "true",
-        "device-model": "qemu-upstream-compat",
         "secureboot": "false"
     },
     "HVM_boot_policy": "BIOS order",

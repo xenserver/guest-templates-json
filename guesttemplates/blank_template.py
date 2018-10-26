@@ -138,6 +138,9 @@ class Recommendations(object):
             self.supports_bios = 'yes' if get_bool_key(data, 'supports_bios', False) else 'no'
         if 'supports_uefi' in data:
             self.supports_uefi = 'yes' if get_bool_key(data, 'supports_uefi', False) else 'no'
+            if self.supports_uefi == 'yes' and 'platform' in data \
+               and 'device_model' in data['platform'] and data['platform']['device_model']:
+                raise ValueError("Cannot have both device-model and supports_uefi in a template")
         if 'supports_secure_boot' in data:
             self.supports_secure_boot = 'yes' if get_bool_key(data, 'supports_secure_boot', False) else 'no'
 
@@ -321,8 +324,9 @@ class BlankTemplate(object):
                 struct3 = doc.createElement('struct')
                 value.appendChild(struct3)
                 for n3, v3 in v2.items():
-                    value = self.create_member(doc, struct3, n3)
-                    value.appendChild(doc.createTextNode(v3))
+                    if v3:
+                        value = self.create_member(doc, struct3, n3)
+                        value.appendChild(doc.createTextNode(v3))
 
             elif isinstance(v2, int):
                 value.appendChild(doc.createTextNode(str(v2)))
