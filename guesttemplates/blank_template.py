@@ -122,6 +122,8 @@ class Recommendations(object):
             self.memory_static_max = str(amount_to_int(data['max_memory']))
         if 'vcpus_max' in data:
             self.vcpus_max = str(data['vcpus_max'])
+        if 'vcpus_min' in data:
+            self.vcpus_min = str(data['vcpus_min'])
         if 'number_of_vbds' in data:
             self.number_of_vbds = str(data['number_of_vbds'])
         if 'number_of_vifs' in data:
@@ -150,6 +152,7 @@ class Recommendations(object):
         doc.appendChild(root)
 
         for field, attr in (('memory-static-max', 'max'),
+                            ('vcpus-min', 'min'),
                             ('vcpus-max', 'max'),
                             ('has-vendor-device', 'value'),
                             ('allow-gpu-passthrough', 'value'),
