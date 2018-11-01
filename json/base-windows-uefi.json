@@ -3,7 +3,7 @@
     "HVM_boot_params": { "firmware": "uefi", "order": "cd" },
     "vcpus_min": 2,
     "platform": {
-	"device-model": null,
+        "device-model": null,
         "secureboot": "true"
     },
     "supports_uefi": "yes",
