@@ -1,6 +1,6 @@
 {
     "derived_from": "base-windows-8.json",
-    "HVM_boot_params": { "firmware": "bios", "order": "cd" },
+    "HVM_boot_params": { "firmware": "bios", "order": "dc" },
     "platform": {
         "device-model": null,
         "secureboot": "false"

@@ -16,7 +16,7 @@
         "secureboot": "false"
     },
     "HVM_boot_policy": "BIOS order",
-    "HVM_boot_params": { "firmware": "bios", "order": "cd" },
+    "HVM_boot_params": { "firmware": "bios", "order": "dc" },
     "supports_bios": "yes",
     "supports_uefi": "yes",
     "supports_secure_boot": "yes"
