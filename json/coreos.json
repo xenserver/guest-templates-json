@@ -3,7 +3,7 @@
     "reference_label": "coreos",
     "name_label": "CoreOS",
     "derived_from": "base-hvmlinux.json",
-    "min_memory": "1G",
+    "min_memory": "2G",
     "max_memory": "512G",
     "disks": [ { "size": "8G" } ]
 }
