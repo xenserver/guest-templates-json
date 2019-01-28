@@ -4,7 +4,7 @@
     "vcpus_min": 2,
     "platform": {
         "device-model": null,
-        "secureboot": "auto"
+        "secureboot": "true"
     },
     "supports_uefi": "yes",
     "supports_secure_boot": "yes"
