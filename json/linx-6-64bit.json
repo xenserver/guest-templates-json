@@ -1,9 +1,0 @@
-{
-    "uuid": "3c85f58f-46b0-11e7-8d8c-64006a84d229",
-    "reference_label": "linx-6-64bit",
-    "name_label": "Linx Linux 6 (64-bit)",
-    "derived_from": "base-hvmlinux.json",
-    "min_memory": "512M",
-    "vcpus_max": 6,
-    "disks": [ { "size": "10G" } ]
-}
