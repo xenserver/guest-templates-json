@@ -13,7 +13,6 @@
         "device_id": "0002",
         "viridian": "true",
         "viridian_time_ref_count": "true",
-        "viridian_reference_tsc": "true",
         "viridian_apic_assist": "true",
         "viridian_crash_ctl": "true",
         "viridian_stimer": "true",
