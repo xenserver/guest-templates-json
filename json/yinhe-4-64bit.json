@@ -1,8 +1,0 @@
-{
-    "uuid": "33e7a341-42b2-11e7-a38a-64006a84d229",
-    "reference_label": "yinhe-4-64bit",
-    "name_label": "Yinhe Kylin 4 (64-bit)",
-    "derived_from": "base-hvmlinux.json",
-    "min_memory": "512M",
-    "disks": [ { "size": "10G" } ]
-}

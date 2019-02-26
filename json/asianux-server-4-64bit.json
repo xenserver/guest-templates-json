@@ -1,6 +1,0 @@
-{
-   "uuid": "eb63d5f0-15d7-11e7-968a-64006a84d229",
-   "reference_label": "asianux-server-4-64bit",
-   "name_label": "Asianux Server 4 (64-bit)",
-   "derived_from": "base-el-6-64bit.json"
-}

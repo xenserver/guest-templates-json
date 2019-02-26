@@ -1,7 +1,0 @@
-{
-    "uuid": "8b4a2648-4060-11e7-9555-0242ac110004",
-    "reference_label": "kylin-server-5-64bit",
-    "name_label": "NeoKylin Linux Security OS 5 (64-bit)",
-    "derived_from": "base-el-6-64bit.json",
-    "PV_args": "graphical utf8 tpm_tis.force=0"
-}
