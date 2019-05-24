@@ -1,6 +1,0 @@
-{
-  "uuid": "c060fa00-8c96-4eb8-bcc9-772daaa01885",
-  "reference_label": "sles-12-sp4-64bit",
-  "name_label": "SUSE Linux Enterprise Server 12 SP4 (64-bit)",
-  "derived_from": "base-sle-hvm-64bit.json"
-}
