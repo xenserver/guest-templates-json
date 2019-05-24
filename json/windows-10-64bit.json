@@ -6,7 +6,7 @@
     "derived_from": "base-windows-uefi.json",
     "min_memory": "2G",
     "max_memory": "1536G",
-    "disks": [ { "size": "24G", "bootable": false } ],
+    "disks": [ { "size": "32G", "bootable": false } ],
     "platform": {
         "acpi_laptop_slate": "1"
     }

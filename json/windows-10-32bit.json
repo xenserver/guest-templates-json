@@ -6,7 +6,7 @@
     "derived_from": "base-windows-8.json",
     "min_memory": "1G",
     "max_memory": "4G",
-    "disks": [ { "size": "24G", "bootable": false } ],
+    "disks": [ { "size": "32G", "bootable": false } ],
     "platform": {
         "acpi_laptop_slate": "1"
     }
