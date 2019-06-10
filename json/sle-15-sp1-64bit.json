@@ -1,0 +1,6 @@
+{
+    "uuid": "0af9afe1-fea3-4d64-a17d-4ae7cdbe23b4",
+    "reference_label": "sle-15-sp1-64bit",
+    "name_label": "SUSE Linux Enterprise 15 SP1 (64-bit)",
+    "derived_from": "base-sle-hvm-64bit.json"
+}
