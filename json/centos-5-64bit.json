@@ -1,6 +1,0 @@
-{
-    "uuid": "03c460f1-f3fc-42a2-8c5d-0c5d4019d90d",
-    "reference_label": "centos-5-64bit",
-    "name_label": "CentOS 5 (64-bit)",
-    "derived_from": "base-el-5-64bit.json"
-}
