@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# This is a small wrapper around create-guest-templates.
+# It is run the first time the host is booted after installation.
+
 set -e
 XE=/usr/bin/xe
 
@@ -46,20 +49,13 @@ remove_built_in_templates() {
     fi
 }
 
-start() {
-    XAPI_START_TIMEOUT_SECONDS=240
+if this_host_is_master; then
+    remove_built_in_templates
+    create-guest-templates
+fi
 
-    if this_host_is_master; then
-        if /opt/xensource/bin/xapi-wait-init-complete ${XAPI_START_TIMEOUT_SECONDS}; then
-            remove_built_in_templates
-            create-guest-templates
-            return 0
-        else
-            return 1
-        fi
-    fi
-}
+# Ensure changes are synced to disk
+xe pool-sync-database
 
-case $1 in
-    start)  start ;;
-esac
+touch /var/lib/misc/ran-create-guest-templates
+exit 0

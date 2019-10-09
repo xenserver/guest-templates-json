@@ -1,0 +1,13 @@
+[Unit]
+Description=Import guest templates into XAPI
+Requires=xapi.service xapi-init-complete.target
+After=xapi.service xapi-init-complete.target
+ConditionPathExists=!/var/lib/misc/ran-create-guest-templates
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/create-guest-templates-wrapper
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target
