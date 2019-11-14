@@ -9,6 +9,5 @@
     "platform": {
         "viridian": "true"
     },
-    "domain_type": "pv_in_pvh",
     "PV_bootloader": "eliloader"
 }
