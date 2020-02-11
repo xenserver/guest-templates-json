@@ -1,5 +1,6 @@
 from guesttemplates import blank_template
 import httplib
+import socket
 import json
 import os
 import tarfile
@@ -15,6 +16,18 @@ def log(msg):
     """Log msg to stdout."""
 
     print msg
+
+class UnixHTTPConnection(httplib.HTTPConnection):
+    """A wrapper around HTTPConnection that supports UNIX domain sockets."""
+
+    def __init__(self, path, *args, **kwargs):
+        self._path = path
+        # Provide dummy host/port arguments required by the constructor
+        httplib.HTTPConnection.__init__(self, 'localhost', '80', *args, **kwargs)
+
+    def connect(self):
+        self.sock = socket.socket(socket.AF_UNIX, socket.SOCK_STREAM)
+        self.sock.connect(self._path)
 
 class Loader(object):
     """Manages loading guest templates from disk into XAPI."""
@@ -141,7 +154,7 @@ class Loader(object):
 
         # Import XS template.
         task_ref = self._session.xenapi.task.create("import-%s" % template.uuid, "Import of template %s" % template.uuid)
-        conn = httplib.HTTPConnection("localhost", 80)
+        conn = UnixHTTPConnection('/var/lib/xcp/xapi')
         params = urllib.urlencode({'session_id': self._session._session, 'task_id': task_ref, 'restore': 'true', 'uuid': template.uuid})
         conn.request("PUT", "/import_metadata?" + params, tar)
         conn.getresponse()
