@@ -6,5 +6,6 @@
         "linux_template": "true",
         "install-methods": "cdrom,nfs,http,ftp"
     },
+    "domain_type": "pv_in_pvh",
     "PV_bootloader": "eliloader"
 }
