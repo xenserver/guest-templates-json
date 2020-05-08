@@ -1,0 +1,8 @@
+{
+  "uuid": "9340090e-90ca-11ea-ab10-2e858157d830",
+  "reference_label": "gooroom-2",
+  "name_label": "Gooroom Platform 2.0",
+  "derived_from": "base-hvmlinux.json",
+  "min_memory": "1G",
+  "disks": [ { "size": "10G" } ]
+}
