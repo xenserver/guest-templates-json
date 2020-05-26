@@ -6,6 +6,10 @@
 set -e
 XE=/usr/bin/xe
 
+UPGRADE="false"
+FIRSTBOOT_DATA_DIR=/etc/firstboot.d/data
+[ -r ${FIRSTBOOT_DATA_DIR}/host.conf ] && . ${FIRSTBOOT_DATA_DIR}/host.conf
+
 # Return zero if this host is a master and non-zero otherwise.
 this_host_is_master(){
     # Note that this is (a) firstboot (after install, upgrade or eject) and (b) UPGRADE is set.
@@ -52,10 +56,12 @@ remove_built_in_templates() {
 if this_host_is_master; then
     remove_built_in_templates
     create-guest-templates
+    if [ "$UPGRADE" != "true" ]; then
+        # Ensure changes are synced to disk
+        xe pool-sync-database
+    fi
 fi
 
-# Ensure changes are synced to disk
-xe pool-sync-database
 
 touch /var/lib/misc/ran-create-guest-templates
 exit 0
