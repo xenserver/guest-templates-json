@@ -1,7 +1,7 @@
 [Unit]
 Description=Import guest templates into XAPI
 Requires=xapi.service xapi-init-complete.target
-After=xapi.service xapi-init-complete.target
+After=xapi.service xapi-init-complete.target network-init.service
 ConditionPathExists=!/var/lib/misc/ran-create-guest-templates
 
 [Service]
