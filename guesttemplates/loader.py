@@ -169,6 +169,8 @@ class Loader(object):
         self._session.xenapi.task.destroy(task_ref)
         if task_status == 'pending':
             raise RuntimeError("Template import timeout")
+        elif task_status != 'success':
+            raise RuntimeError("Template import failed: %s" % task_status)
 
         # Set default_template = true
         template_ref = self._session.xenapi.VM.get_by_uuid(template.uuid)
