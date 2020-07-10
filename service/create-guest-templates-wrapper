@@ -10,6 +10,11 @@ UPGRADE="false"
 FIRSTBOOT_DATA_DIR=/etc/firstboot.d/data
 [ -r ${FIRSTBOOT_DATA_DIR}/host.conf ] && . ${FIRSTBOOT_DATA_DIR}/host.conf
 
+if [ ! -f /etc/xensource-inventory ]; then
+    # Skip if we're being run during host installation.
+    exit 0
+fi
+
 # Return zero if this host is a master and non-zero otherwise.
 this_host_is_master(){
     # Note that this is (a) firstboot (after install, upgrade or eject) and (b) UPGRADE is set.
