@@ -1,0 +1,8 @@
+{
+    "uuid": "d38c14f5-6021-4e05-b60c-747b087db7f9",
+    "reference_label": "tmax-3",
+    "name_label": "TmaxOS 3",
+    "derived_from": "base-hvmlinux.json",
+    "min_memory": "2G",
+    "disks": [ { "size": "30G" } ]
+}
