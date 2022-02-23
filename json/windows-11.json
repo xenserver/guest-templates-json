@@ -1,0 +1,13 @@
+{
+    "uuid": "1f8728f9-6354-4a68-adc3-222c34f2bb94",
+    "reference_label": "windows-11",
+    "name_label": "Windows 11",
+    "name_description": "Clones of this template will automatically provision their storage when first booted and then reconfigure themselves with the optimal settings for Windows 11.",
+    "derived_from": "base-windows-uefi.json",
+    "min_memory": "4G",
+    "max_memory": "1536G",
+    "disks": [ { "size": "64G", "bootable": false } ],
+    "platform": {
+        "acpi_laptop_slate": "1"
+    }
+}
