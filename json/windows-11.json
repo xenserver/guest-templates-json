@@ -8,6 +8,7 @@
     "max_memory": "1536G",
     "disks": [ { "size": "64G", "bootable": false } ],
     "platform": {
-        "acpi_laptop_slate": "1"
+        "acpi_laptop_slate": "1",
+        "vtpm": "true"
     }
 }
