@@ -23,7 +23,7 @@ class TestLoader(unittest.TestCase):
         self.assertLessEqual(len(loader._by_uuid), len(loader._confs))
         self.assertGreaterEqual(len(loader._by_uuid), 3)
 
-        for i in loader._by_uuid.itervalues():
+        for i in loader._by_uuid.values():
             i.toxml({})
 
 if __name__ == '__main__':
