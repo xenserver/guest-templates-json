@@ -97,7 +97,7 @@ class DiskDevices(object):
             root.appendChild(entry)
             position += 1
 
-        return doc.documentElement.toxml('utf-8')
+        return doc.documentElement.toxml()
 
 class Disk(object):
 
@@ -177,7 +177,7 @@ class Recommendations(object):
             entry.setAttribute('max', self.__dict__.get(prop.replace('-', '_'), ""))
             root.appendChild(entry)
 
-        return doc.documentElement.toxml('utf-8')
+        return doc.documentElement.toxml()
 
     def update(self, new):
         self.__dict__.update(new.__dict__)
