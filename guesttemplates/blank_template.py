@@ -110,7 +110,7 @@ class Disk(object):
     def get_disk_entry(self):
         doc = minidom.Document()
         entry = doc.createElement('disk')
-        for element_name, element_value in list(self.__dict__.items()):
+        for element_name, element_value in self.__dict__.items():
             entry.setAttribute(element_name, str(element_value))
 
         return entry
@@ -274,7 +274,7 @@ class BlankTemplate(object):
         struct = doc.createElement('struct')
         ver_member.appendChild(struct)
 
-        for n, v in list(version.items()):
+        for n, v in version.items():
             value = self.create_member(doc, struct, n)
             value.appendChild(doc.createTextNode(v))
 
@@ -296,7 +296,7 @@ class BlankTemplate(object):
         struct2 = doc.createElement('struct')
         snapshot.appendChild(struct2)
 
-        for n2, v2 in list(record_dict.items()):
+        for n2, v2 in record_dict.items():
             value = self.create_member(doc, struct2, n2)
 
             if isinstance(v2, basestring) and v2 != "":
@@ -329,7 +329,7 @@ class BlankTemplate(object):
             elif isinstance(v2, dict):
                 struct3 = doc.createElement('struct')
                 value.appendChild(struct3)
-                for n3, v3 in list(v2.items()):
+                for n3, v3 in v2.items():
                     if v3:
                         value = self.create_member(doc, struct3, n3)
                         value.appendChild(doc.createTextNode(v3))
