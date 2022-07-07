@@ -1,6 +1,3 @@
-from builtins import str
-from past.builtins import basestring
-from builtins import object
 import datetime
 import re
 import uuid
@@ -23,7 +20,7 @@ def amount_to_int(amt):
 
 def get_bool_key(d, key, default):
     v = d.get(key, default)
-    if isinstance(v, basestring):
+    if isinstance(v, str):
         v = v.lower() in ('t', 'true', 'y', 'yes', '1')
     return v
 
@@ -299,7 +296,7 @@ class BlankTemplate(object):
         for n2, v2 in record_dict.items():
             value = self.create_member(doc, struct2, n2)
 
-            if isinstance(v2, basestring) and v2 != "":
+            if isinstance(v2, str) and v2 != "":
                 value.appendChild(doc.createTextNode(v2))
 
             elif isinstance(v2, datetime.datetime):
