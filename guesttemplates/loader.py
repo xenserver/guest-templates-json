@@ -1,7 +1,7 @@
 from __future__ import print_function
 from future import standard_library
 standard_library.install_aliases()
-from builtins import object
+from builtins import bytes, object
 from guesttemplates import blank_template
 import http.client
 import socket
@@ -123,12 +123,12 @@ class Loader(object):
         """Return a tar-formatted string containing 'data' in a file
         called 'name'."""
 
-        datafh = io.StringIO(data)
+        datafh = io.BytesIO(bytes(data, encoding='utf-8'))
         tarinfo = tarfile.TarInfo(name)
         tarinfo.size = len(data)
         tarinfo.mtime = time.time()
 
-        tarfh = io.StringIO()
+        tarfh = io.BytesIO()
         tar = tarfile.TarFile(fileobj=tarfh, mode='w')
         tar.addfile(tarinfo, fileobj=datafh)
         tar.close()
