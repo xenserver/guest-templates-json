@@ -10,7 +10,7 @@ import os
 import tarfile
 import io
 import time
-import urllib.request, urllib.parse, urllib.error
+import urllib.parse
 import os.path
 
 # List of places to look for config files. The paths are ordered by
