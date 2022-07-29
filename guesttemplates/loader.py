@@ -1,12 +1,12 @@
 from guesttemplates import blank_template
-import httplib
+import http.client
 import socket
 import json
 import os
 import tarfile
-import StringIO
+import io
 import time
-import urllib
+import urllib.parse
 import os.path
 
 # List of places to look for config files. The paths are ordered by
@@ -15,15 +15,15 @@ import os.path
 def log(msg):
     """Log msg to stdout."""
 
-    print msg
+    print(msg)
 
-class UnixHTTPConnection(httplib.HTTPConnection):
+class UnixHTTPConnection(http.client.HTTPConnection):
     """A wrapper around HTTPConnection that supports UNIX domain sockets."""
 
     def __init__(self, path, *args, **kwargs):
         self._path = path
         # Provide dummy host/port arguments required by the constructor
-        httplib.HTTPConnection.__init__(self, 'localhost', '80', *args, **kwargs)
+        http.client.HTTPConnection.__init__(self, 'localhost', '80', *args, **kwargs)
 
     def connect(self):
         self.sock = socket.socket(socket.AF_UNIX, socket.SOCK_STREAM)
@@ -77,7 +77,7 @@ class Loader(object):
     def load_templates(self):
         """Load all known templates from disk."""
 
-        for fname in self._confs.itervalues():
+        for fname in self._confs.values():
             log("Load %s" % fname)
             template = self._load_template(fname)
             if hasattr(template, 'uuid'):
@@ -119,12 +119,12 @@ class Loader(object):
         """Return a tar-formatted string containing 'data' in a file
         called 'name'."""
 
-        datafh = StringIO.StringIO(data)
+        datafh = io.BytesIO(bytes(data, encoding='utf-8'))
         tarinfo = tarfile.TarInfo(name)
         tarinfo.size = len(data)
         tarinfo.mtime = time.time()
 
-        tarfh = StringIO.StringIO()
+        tarfh = io.BytesIO()
         tar = tarfile.TarFile(fileobj=tarfh, mode='w')
         tar.addfile(tarinfo, fileobj=datafh)
         tar.close()
@@ -155,7 +155,7 @@ class Loader(object):
         # Import XS template.
         task_ref = self._session.xenapi.task.create("import-%s" % template.uuid, "Import of template %s" % template.uuid)
         conn = UnixHTTPConnection('/var/lib/xcp/xapi')
-        params = urllib.urlencode({'session_id': self._session._session, 'task_id': task_ref, 'restore': 'true', 'uuid': template.uuid})
+        params = urllib.parse.urlencode({'session_id': self._session._session, 'task_id': task_ref, 'restore': 'true', 'uuid': template.uuid})
         conn.request("PUT", "/import_metadata?" + params, tar)
         conn.getresponse()
 
@@ -185,5 +185,5 @@ class Loader(object):
     def insert_templates(self):
         """Insert all known top-level templates into XAPI."""
 
-        for i in self._by_uuid.itervalues():
+        for i in self._by_uuid.values():
             self._insert_template(i)

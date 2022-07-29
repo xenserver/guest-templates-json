@@ -20,7 +20,7 @@ def amount_to_int(amt):
 
 def get_bool_key(d, key, default):
     v = d.get(key, default)
-    if isinstance(v, basestring):
+    if isinstance(v, str):
         v = v.lower() in ('t', 'true', 'y', 'yes', '1')
     return v
 
@@ -94,7 +94,7 @@ class DiskDevices(object):
             root.appendChild(entry)
             position += 1
 
-        return doc.documentElement.toxml('utf-8')
+        return doc.documentElement.toxml()
 
 class Disk(object):
 
@@ -174,7 +174,7 @@ class Recommendations(object):
             entry.setAttribute('max', self.__dict__.get(prop.replace('-', '_'), ""))
             root.appendChild(entry)
 
-        return doc.documentElement.toxml('utf-8')
+        return doc.documentElement.toxml()
 
     def update(self, new):
         self.__dict__.update(new.__dict__)
@@ -296,7 +296,7 @@ class BlankTemplate(object):
         for n2, v2 in record_dict.items():
             value = self.create_member(doc, struct2, n2)
 
-            if isinstance(v2, basestring) and v2 != "":
+            if isinstance(v2, str) and v2 != "":
                 value.appendChild(doc.createTextNode(v2))
 
             elif isinstance(v2, datetime.datetime):
@@ -360,7 +360,7 @@ class BaseTemplate(BlankTemplate):
         blacklist = ('platform', 'other_config', 'recommendations', 'disks', 'has_vendor_device')
 
         # apply template values over current values
-        filtered_template = {k: v for k, v in template.iteritems() if k not in blacklist}
+        filtered_template = {k: v for k, v in template.items() if k not in blacklist}
         super(BaseTemplate, self).update(filtered_template)
 
         if "min_memory" in template:
