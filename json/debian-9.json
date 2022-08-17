@@ -1,8 +1,0 @@
-{
-    "uuid": "381ebb02-96d5-11e7-92b9-b8ca3a97c5fc",
-    "reference_label": "debian-9",
-    "name_label": "Debian Stretch 9.0",
-    "derived_from": "base-hvmlinux.json",
-    "min_memory": "256M",
-    "disks": [ { "size": "10G" } ]
-}

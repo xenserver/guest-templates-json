@@ -18,12 +18,15 @@
         "viridian_crash_ctl": "true",
         "viridian_stimer": "true",
         "device-model": "qemu-upstream-compat",
-        "secureboot": "false"
+        "secureboot": "false",
+        "vga": "std",
+        "videoram": "8"
     },
     "has_vendor_device": true,
     "HVM_boot_policy": "BIOS order",
     "HVM_boot_params": { "firmware": "bios", "order": "dc" },
     "supports_bios": "yes",
     "supports_uefi": "no",
-    "supports_secure_boot": "no"
+    "supports_secure_boot": "no",
+    "generation_id": "0:0"
 }

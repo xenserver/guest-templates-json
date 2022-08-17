@@ -1,6 +1,0 @@
-{
-    "uuid": "847f7f36-6da8-487d-940d-f0f06939a1b6",
-    "reference_label": "sled-12-sp4-64bit",
-    "name_label": "SUSE Linux Enterprise Desktop 12 SP4 (64-bit)",
-    "derived_from": "base-sle-hvm-64bit.json"
-}

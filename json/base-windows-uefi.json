@@ -1,5 +1,5 @@
 {
-    "derived_from": "base-windows-8.json",
+    "derived_from": "base-windows.json",
     "HVM_boot_params": { "firmware": "uefi", "order": "cd" },
     "vcpus_min": 2,
     "platform": {
