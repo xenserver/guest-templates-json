@@ -10,5 +10,6 @@
     "platform": {
         "acpi_laptop_slate": "1",
         "vtpm": "true"
-    }
+    },
+    "supports_bios": "no"
 }
