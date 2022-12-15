@@ -3,7 +3,7 @@ LINT_OPTIONS ?= --forbid duplicate-keys
 
 .PHONY: check
 check: lint-json
-	python2 ./check.py
+	python3 ./check.py
 
 .PHONY: lint-json
 lint-json: $(JSON_FILES)
