@@ -1,4 +1,6 @@
 #!/usr/bin/env python3
+import glob
+import json
 import unittest
 from guesttemplates import loader
 
@@ -25,6 +27,20 @@ class TestLoader(unittest.TestCase):
 
         for i in loader._by_uuid.values():
             i.toxml({})
+
+        all_uuids = []
+        all_reflabels = []
+        for i in glob.glob("json/*"):
+            with open(i, 'r') as f:
+                template = json.load(f)
+                if 'uuid' in template:
+                    all_uuids.append(template['uuid'])
+                if 'reference_label' in template:
+                    all_reflabels.append(template['reference_label'])
+
+        self.assertEqual(sorted(loader._by_uuid.keys()), sorted(all_uuids))
+        self.assertEqual(sorted(loader._by_reflabel.keys()), sorted(all_reflabels))
+
 
 if __name__ == '__main__':
     unittest.main()
