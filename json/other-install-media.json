@@ -5,7 +5,7 @@
     "name_description": "Template which allows VM installation from install media",
     "min_memory": "128M",
     "max_memory": "128G",
-    "vcpus_max": 32,
+    "vcpus_max": 64,
     "number_of_vbds": 255,
     "number_of_vifs": 7,
     "other_config": {
