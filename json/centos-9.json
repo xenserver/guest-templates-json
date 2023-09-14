@@ -1,0 +1,6 @@
+{
+    "uuid": "a3d70e4d-c5ac-4dfb-999b-30a0a7efe546",
+    "reference_label": "centos-9",
+    "name_label": "CentOS Stream 9",
+    "derived_from": "base-el-7.json"
+}
