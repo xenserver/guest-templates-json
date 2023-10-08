@@ -1,0 +1,12 @@
+{
+    "platform": {
+        "device-model": "qemu-upstream-uefi",
+        "secureboot": "true"
+    },
+    "HVM_boot_params": {
+        "firmware": "uefi"
+    },
+    "supports_uefi": "yes",
+    "supports_secure_boot": "yes",
+    "derived_from": "base-hvmlinux.json"
+}
