@@ -1,0 +1,10 @@
+{
+    "platform": {
+        "device-model": null,
+        "secureboot": "auto"
+    },
+    "HVM_boot_params": { "firmware": "uefi", "order": "cdn" },
+    "supports_uefi": "yes",
+    "supports_secure_boot": "yes",
+    "derived_from": "base-hvmlinux.json"
+}

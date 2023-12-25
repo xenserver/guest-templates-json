@@ -2,7 +2,7 @@
     "uuid": "df1a0e64-3799-482b-aa9f-1ed713c7dac5",
     "reference_label": "ubuntu-22.04",
     "name_label": "Ubuntu Jammy Jellyfish 22.04",
-    "derived_from": "base-hvmlinux.json",
+    "derived_from": "base-linux-uefi.json",
     "min_memory": "1G",
     "disks": [ { "size": "10G" } ]
 }
