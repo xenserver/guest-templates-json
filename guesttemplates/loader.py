@@ -125,7 +125,7 @@ class Loader(object):
         tarinfo.mtime = time.time()
 
         tarfh = io.BytesIO()
-        tar = tarfile.TarFile(fileobj=tarfh, mode='w')
+        tar = tarfile.TarFile(fileobj=tarfh, mode='w', format=tarfile.GNU_FORMAT)
         tar.addfile(tarinfo, fileobj=datafh)
         tar.close()
         datafh.close()
