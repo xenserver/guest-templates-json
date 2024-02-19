@@ -1,8 +1,0 @@
-{
-    "uuid": "74ae424d-a1d3-4d96-9827-d1d60a4c7511",
-    "reference_label": "ubuntu-18.04",
-    "name_label": "Ubuntu Bionic Beaver 18.04 (deprecated)",
-    "derived_from": "base-hvmlinux.json",
-    "min_memory": "512M",
-    "disks": [ { "size": "10G" } ]
-}
