@@ -2,5 +2,11 @@
     "uuid": "b5915805-d800-459d-826a-322dc9cf07e2",
     "reference_label": "sle-15-64bit",
     "name_label": "SUSE Linux Enterprise 15 (64-bit)",
-    "derived_from": "base-sle-hvm-64bit.json"
+    "derived_from": "base-linux-uefi.json",
+    "max_memory": "1536G",
+    "other_config": {
+        "install-arch": "x86_64"
+    },
+    "min_memory": "1G",
+    "disks": [ { "size": "8G" } ]
 }

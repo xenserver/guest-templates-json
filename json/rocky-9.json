@@ -2,6 +2,7 @@
     "uuid": "1a647cf9-99c1-4e9c-b3b4-6b9989c530be",
     "reference_label": "rocky-9",
     "name_label": "Rocky Linux 9 (preview)",
-    "derived_from": "base-el-7.json",
+    "derived_from": "base-linux-uefi.json",
+    "min_memory": "2G",
     "disks": [ { "size": "15G" } ]
 }
