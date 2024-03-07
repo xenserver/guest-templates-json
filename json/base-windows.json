@@ -9,7 +9,6 @@
         "install-methods": "cdrom"
     },
     "platform": {
-        "cores-per-socket": "2",
         "device_id": "0002",
         "viridian": "true",
         "viridian_time_ref_count": "true",
