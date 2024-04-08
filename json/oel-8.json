@@ -4,5 +4,7 @@
     "name_label": "Oracle Linux 8",
     "derived_from": "base-linux-uefi.json",
     "min_memory": "2G",
+    "VCPUs_at_startup": 2,
+    "VCPUs_max": 2,
     "disks": [ { "size": "10G" } ]
 }
