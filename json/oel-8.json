@@ -2,5 +2,7 @@
     "uuid": "6959dfe8-534c-4c58-8a8c-3c3792293543",
     "reference_label": "oel-8",
     "name_label": "Oracle Linux 8",
-    "derived_from": "base-el-7.json"
+    "derived_from": "base-el-7.json",
+    "VCPUs_at_startup": 2,
+    "VCPUs_max": 2
 }
