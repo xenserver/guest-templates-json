@@ -1,7 +1,7 @@
 {
     "uuid": "6c91b878-5095-421e-a914-224b3bb1088c",
     "reference_label": "rhel-9",
-    "name_label": "Red Hat Enterprise Linux 9 (preview)",
+    "name_label": "Red Hat Enterprise Linux 9",
     "derived_from": "base-linux-uefi.json",
     "min_memory": "2G",
     "disks": [ { "size": "10G" } ]
