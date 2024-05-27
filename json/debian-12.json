@@ -1,7 +1,7 @@
 {
     "uuid": "07d91aaa-43f7-430a-bf84-0edb6714df0f",
     "reference_label": "debian-12",
-    "name_label": "Debian Bookworm 12 (preview)",
+    "name_label": "Debian Bookworm 12",
     "derived_from": "base-linux-uefi.json",
     "min_memory": "1G",
     "disks": [ { "size": "10G" } ]
