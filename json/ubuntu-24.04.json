@@ -1,7 +1,7 @@
 {
     "uuid": "ff1f3e17-84d9-4d72-962d-571c4ceb527b",
     "reference_label": "ubuntu-24.04",
-    "name_label": "Ubuntu Noble Numbat 24.04 (preview)",
+    "name_label": "Ubuntu Noble Numbat 24.04",
     "derived_from": "base-linux-uefi.json",
     "min_memory": "1G",
     "disks": [ { "size": "10G" } ]
