@@ -1,7 +1,7 @@
 {
     "uuid": "2cf37285-57bc-4633-a24f-0c6c825dda66",
     "reference_label": "ubuntu-20.04",
-    "name_label": "Ubuntu Focal Fossa 20.04",
+    "name_label": "Ubuntu Focal Fossa 20.04 (deprecated)",
     "derived_from": "base-linux-uefi.json",
     "min_memory": "512M",
     "disks": [ { "size": "10G" } ]
