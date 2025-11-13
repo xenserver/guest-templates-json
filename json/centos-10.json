@@ -1,7 +1,7 @@
 {
     "uuid": "203103c5-f257-4ef6-ac59-f3e7184c8b1b",
     "reference_label": "centos-10",
-    "name_label": "CentOS Stream 10 (preview)",
+    "name_label": "CentOS Stream 10",
     "derived_from": "base-linux-uefi.json",
     "min_memory": "2G",
     "disks": [ { "size": "10G" } ]
