@@ -1,0 +1,8 @@
+{
+    "uuid": "7375046a-c05e-435b-9f04-5314a64e6a5e",
+    "reference_label": "rhel-10",
+    "name_label": "Red Hat Enterprise Linux 10 (preview)",
+    "derived_from": "base-linux-uefi.json",
+    "min_memory": "2G",
+    "disks": [ { "size": "10G" } ]
+}
