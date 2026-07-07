@@ -1,0 +1,8 @@
+{
+    "uuid": "7921d301-2bf2-4cf2-ba9a-612f16f04e65",
+    "reference_label": "alma-10",
+    "name_label": "AlmaLinux 10",
+    "derived_from": "base-linux-uefi.json",
+    "min_memory": "2G",
+    "disks": [ { "size": "10G" } ]
+}
