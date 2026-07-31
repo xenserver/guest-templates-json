@@ -1,0 +1,8 @@
+{
+    "uuid": "b7d9f56d-e7a3-47cc-a59d-dfb1e2b5ea1d",
+    "reference_label": "ubuntu-26.04",
+    "name_label": "Ubuntu Resolute Raccoon 26.04",
+    "derived_from": "base-linux-uefi.json",
+    "min_memory": "2G",
+    "disks": [ { "size": "10G" } ]
+}
