@@ -1,0 +1,8 @@
+{
+    "uuid": "f27c09cd-0a3c-45ad-9946-325adf127f94",
+    "reference_label": "rocky-10",
+    "name_label": "Rocky Linux 10",
+    "derived_from": "base-linux-uefi.json",
+    "min_memory": "2G",
+    "disks": [ { "size": "10G" } ]
+}
