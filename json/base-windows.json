@@ -17,6 +17,7 @@
         "viridian_apic_assist": "true",
         "viridian_crash_ctl": "true",
         "viridian_stimer": "true",
+        "viridian_stimer_direct": "true",
         "device-model": "qemu-upstream-compat",
         "secureboot": "false",
         "vga": "std",
