@@ -8,6 +8,12 @@ ConditionPathExists=!/var/lib/misc/ran-create-guest-templates
 Type=oneshot
 ExecStart=/usr/bin/create-guest-templates-wrapper
 RemainAfterExit=yes
+Restart=on-failure
+RestartSec=60s
+
+# Avoid tight restart loops if XAPI/import is persistently failing.
+StartLimitIntervalSec=20min
+StartLimitBurst=5
 
 [Install]
 WantedBy=multi-user.target
