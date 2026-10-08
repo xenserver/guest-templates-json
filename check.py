@@ -3,6 +3,9 @@ import glob
 import json
 import unittest
 from collections import Counter
+
+from jsonschema.validators import validator_for
+
 from guesttemplates import loader
 
 class MockLoader(loader.Loader):
@@ -62,6 +65,21 @@ class TestJsonFiles(unittest.TestCase):
             with self.subTest(path=path), open(path) as f:
                 json.load(f, object_pairs_hook=reject_duplicates,
                           parse_constant=reject_constant)
+
+    def test_schema(self):
+        """Tests that every template matches schema/template.schema.json."""
+        with open("schema/template.schema.json") as f:
+            schema = json.load(f)
+        validator_cls = validator_for(schema)
+        validator_cls.check_schema(schema)
+        validator = validator_cls(schema)
+
+        for path in sorted(glob.glob("json/*.json")):
+            with self.subTest(path=path), open(path) as f:
+                for error in validator.iter_errors(json.load(f)):
+                    with self.subTest():
+                        self.fail(f"{error.json_path}: {error.message}")
+
 
 if __name__ == '__main__':
     unittest.main()
