@@ -2,6 +2,7 @@
 import glob
 import json
 import unittest
+from collections import Counter
 from guesttemplates import loader
 
 class MockLoader(loader.Loader):
@@ -41,6 +42,26 @@ class TestLoader(unittest.TestCase):
         self.assertEqual(sorted(loader._by_uuid.keys()), sorted(all_uuids))
         self.assertEqual(sorted(loader._by_reflabel.keys()), sorted(all_reflabels))
 
+
+class TestJsonFiles(unittest.TestCase):
+    def test_strict_json(self):
+        """Tests that the templates are strict JSON: no duplicated keys, no NaN/Infinity."""
+
+        def reject_duplicates(pairs):
+            keys = [k for k, _ in pairs]
+            for k, n in Counter(keys).items():
+                if n > 1:
+                    with self.subTest(duplicate=k):
+                        self.fail(f"duplicate key: {k}")
+            return dict(pairs)
+
+        def reject_constant(name):
+            self.fail(f"non-standard JSON constant: {name}")
+
+        for path in sorted(glob.glob("json/*.json")):
+            with self.subTest(path=path), open(path) as f:
+                json.load(f, object_pairs_hook=reject_duplicates,
+                          parse_constant=reject_constant)
 
 if __name__ == '__main__':
     unittest.main()
