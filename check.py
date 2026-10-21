@@ -2,6 +2,13 @@
 import glob
 import json
 import unittest
+from collections import Counter
+
+try:
+    from jsonschema.validators import validator_for
+except ImportError:
+    validator_for = None
+
 from guesttemplates import loader
 
 class MockLoader(loader.Loader):
@@ -40,6 +47,47 @@ class TestLoader(unittest.TestCase):
 
         self.assertEqual(sorted(loader._by_uuid.keys()), sorted(all_uuids))
         self.assertEqual(sorted(loader._by_reflabel.keys()), sorted(all_reflabels))
+
+
+class TestJsonFiles(unittest.TestCase):
+    def test_strict_json(self):
+        """Tests that the templates are strict JSON: no duplicated keys, no NaN/Infinity."""
+
+        def reject_duplicates(pairs):
+            keys = [k for k, _ in pairs]
+            for k, n in Counter(keys).items():
+                if n > 1:
+                    with self.subTest(duplicate=k):
+                        self.fail(f"duplicate key: {k}")
+            return dict(pairs)
+
+        def reject_constant(name):
+            self.fail(f"non-standard JSON constant: {name}")
+
+        for path in sorted(glob.glob("json/*.json")):
+            with self.subTest(path=path), open(path) as f:
+                json.load(f, object_pairs_hook=reject_duplicates,
+                          parse_constant=reject_constant)
+
+    def test_schema(self):
+        """Tests that every template matches schema/template.schema.json."""
+        if validator_for is None:
+            self.skipTest("jsonschema not installed")
+
+        with open("schema/template.schema.json") as f:
+            schema = json.load(f)
+
+        validator_cls = validator_for(schema, default=None)
+        if validator_cls is None:
+            self.skipTest(f"jsonschema does not support {schema['$schema']}")
+        validator_cls.check_schema(schema)
+        validator = validator_cls(schema)
+
+        for path in sorted(glob.glob("json/*.json")):
+            with self.subTest(path=path), open(path) as f:
+                for error in validator.iter_errors(json.load(f)):
+                    with self.subTest():
+                        self.fail(f"{error.json_path}: {error.message}")
 
 
 if __name__ == '__main__':
