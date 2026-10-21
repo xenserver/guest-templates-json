@@ -1,3 +1,3 @@
 .PHONY: check
 check:
-	python3 ./check.py
+	python3 ./check.py -v

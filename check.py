@@ -4,7 +4,10 @@ import json
 import unittest
 from collections import Counter
 
-from jsonschema.validators import validator_for
+try:
+    from jsonschema.validators import validator_for
+except ImportError:
+    validator_for = None
 
 from guesttemplates import loader
 
@@ -68,9 +71,15 @@ class TestJsonFiles(unittest.TestCase):
 
     def test_schema(self):
         """Tests that every template matches schema/template.schema.json."""
+        if validator_for is None:
+            self.skipTest("jsonschema not installed")
+
         with open("schema/template.schema.json") as f:
             schema = json.load(f)
-        validator_cls = validator_for(schema)
+
+        validator_cls = validator_for(schema, default=None)
+        if validator_cls is None:
+            self.skipTest(f"jsonschema does not support {schema['$schema']}")
         validator_cls.check_schema(schema)
         validator = validator_cls(schema)
 
